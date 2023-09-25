@@ -1,0 +1,214 @@
+@use '../../styles/common' as c;
+@use '../../styles/variables' as v;
+
+$top-bar-height: 4.68vw;
+
+%top-bar-size {
+  height: $top-bar-height;
+  min-height: 45px;
+  max-height: 65px;
+}
+
+.header {
+  position: relative;
+  height: 57vw;
+  max-height: 800px;
+
+  &__parallax {
+    @include c.stretchAbsolute;
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  &__image {
+    position: absolute;
+    width: 100%;
+    object-fit: cover;
+    bottom: 0;
+  }
+
+  &__branding {
+    @extend %flex-row-center;
+    @extend %top-bar-size;
+    background: v.$background-branding;
+    z-index: v.$fixed-top-bar;
+
+    position: fixed;
+    top: -1px;
+    right: 0;
+    left: 0;
+
+    & img {
+      width: 100px;
+    }
+
+    & a {
+      @extend %flex-row-center;
+      min-height: 45px;
+      min-width: 120px;
+    }
+  }
+
+  &__menu {
+    @extend %flex-column;
+    @include c.size(100%, 100vh);
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: v.$fixed-top-bar + 1;
+    opacity: 1;
+    animation: appear 0.333s 0.5s both;
+    background: v.$background-branding;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: transform 0.2s ease-out;
+  }
+
+  &__menu-toggle {
+    @extend %a11y-friendly-hide;
+    position: fixed;
+    top: -10;
+
+    &:checked {
+      + .header__button-container .header__menu-button::before {
+        margin-top: 0px;
+        transform: rotate(45deg);
+      }
+
+      & + .header__button-container .header__menu-button {
+        background: transparent;
+      }
+
+      & ~ .header__menu {
+        transform: translateY(0);
+      }
+
+      & + .header__button-container .header__menu-button::after {
+        margin-top: 0px;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  &__menu a {
+    @extend %font-14-19-bold;
+    @include c.letterSpacing15;
+    display: block;
+    text-decoration: none;
+    color: v.$text-color-primary-contrast;
+    text-transform: uppercase;
+    padding: 12px;
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.1) 0,
+        rgba(255, 255, 255, 0.1) 0
+      )
+      bottom / 0 1px no-repeat;
+    transition: background 0.15s ease-out;
+
+    &:hover,
+    a:focus {
+      background: linear-gradient(
+          rgba(255, 255, 255, 1) 0,
+          rgba(255, 255, 255, 1) 0
+        )
+        bottom / 80% 1px no-repeat;
+    }
+  }
+
+  &__menu-button,
+  &__menu-button::before,
+  &__menu-button::after {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    height: 2px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+  }
+
+  &__menu-button::before {
+    content: '';
+    margin-top: -8px;
+  }
+
+  &__menu-button::after {
+    content: '';
+    margin-top: 8px;
+  }
+
+  &__button-container {
+    @extend %flex-row-center;
+    @extend %top-bar-size;
+    width: $top-bar-height;
+    min-width: 45px;
+    max-width: 65px;
+    position: fixed;
+    top: 0px;
+    right: 20px;
+    z-index: v.$fixed-top-bar + 2;
+
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (min-width: v.$media-bp-tablets) {
+    &__nav {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    &__branding {
+      position: relative;
+    }
+    &__menu {
+      position: relative;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      @include c.size(100%, unset);
+      max-width: 720px;
+
+      transform: translate(0);
+      transition: none;
+      animation: none;
+      margin-top: 33px;
+      background: none;
+    }
+
+    &__menu-toggle,
+    &__button-container {
+      display: none;
+    }
+
+    &__image-overlay {
+      pointer-events: none;
+      z-index: 1;
+      @include c.stretchAbsolute;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.4) 20%,
+        transparent 50%
+      );
+    }
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

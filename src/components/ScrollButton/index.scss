@@ -1,0 +1,16 @@
+@use '../../styles/common' as c;
+@use '../../styles/variables' as v;
+
+.scroll-button {
+  margin-top: 59px;
+  margin-bottom: 59px;
+  background: transparent;
+  border: none;
+
+  &__circle {
+    @extend %flex-row-center;
+    @include c.size(74px, 74px);
+    border: 2px solid v.$stroke-color-primary;
+    border-radius: 50%;
+  }
+}

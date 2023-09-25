@@ -1,0 +1,141 @@
+@use '../../styles/common' as c;
+@use '../../styles/variables.scss' as v;
+
+$fade-in-initial-transform: translateY(50px);
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// animation
+.overlay {
+  @include c.stretchFixed;
+  z-index: v.$page-overlay-z-index;
+  mix-blend-mode: exclusion;
+  pointer-events: none;
+}
+.cursor {
+  transition: opacity 0.333s ease-in-out;
+  opacity: 0;
+  transform: translate(-100px, -100px);
+
+  &._visible {
+    opacity: 1;
+  }
+
+  &__circle {
+    @extend %flex-row-center;
+    @include c.size(12px, 12px);
+    transition: all 0.2s ease-out;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &._active & {
+    &__circle {
+      @include c.size(45px, 45px);
+      background-color: rgb(255, 255, 255, 0);
+    }
+  }
+}
+
+._clickable {
+  &-content {
+    transition: transform 0.15s ease-out;
+    transform-origin: center;
+  }
+
+  &:active:not(:disabled) &-content {
+    transform: scale(0.7);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ._observed-fade-in {
+    opacity: 0;
+    transform: $fade-in-initial-transform;
+  }
+
+  ._fade-in {
+    opacity: 0;
+    transform: $fade-in-initial-transform;
+    animation: fadeIn 0.4s ease-out both;
+    animation-delay: 0.25s;
+  }
+
+  ._anim-delay-50ms {
+    animation-delay: 0.5s;
+  }
+
+  ._anim-delay-1s {
+    animation-delay: 1s;
+  }
+
+  ._subtle-bounce {
+    animation: subtleBounce 10s ease-in-out 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: $fade-in-initial-transform;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes subtleBounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  52% {
+    transform: translateY(0);
+  }
+
+  54% {
+    transform: translateY(-1px);
+  }
+
+  57% {
+    transform: translateY(5px);
+  }
+
+  60% {
+    transform: translateY(0);
+  }
+}
+
+
+
+// :export {
+//     textColor: $textColor;
+//     primaryColor: $primaryColor;
+//     secondaryColor: $secondaryColor;
+// }

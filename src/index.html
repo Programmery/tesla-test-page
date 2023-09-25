@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+    <meta charset=utf-8>
+    <title>TeslaFake</title>
+    <link rel="icon" href="assets/favicons/favicon.ico" type="image/vnd.microsoft.icon">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tesla official website (but not really)">
+    <meta property="og:site_name" content="TeslaFake">
+    <meta name="description"
+        content="This may be a Tesla website or it might be a fake Tesla. You will never know but that can not stop you from having fun!">
+    <meta name="keywords"
+        content="Tesla, Electric Vehicles, Elon Musk, Model S, Model X, Model 3, Model Y, Roadster, SendCloud">
+    <meta property="og:image"
+        content="https://digitalassets.tesla.com/tesla-contents/image/upload/h_628,w_1200,c_fit,f_auto,q_auto:best/LHD-Model-3-Social">
+    <meta property="og:image:secure_url"
+        content="https://digitalassets.tesla.com/tesla-contents/image/upload/h_628,w_1200,c_fit,f_auto,q_auto:best/LHD-Model-3-Social">
+    <meta name="viewport"
+        content="width=device-width, minimum-scale=1.0, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover">
+    <meta name=HandheldFriendly content=true>
+    <meta name="MobileOptimized" content="width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+        <div class="header__parallax">
+            <img class="header__image" alt="Tesla Model 5 photo"
+                srcset="assets/images/hero-image.webp 700w, assets/images/hero-image@2x.webp 1400w"
+                src="assets/images/hero-image@2x.webp">
+
+        </div>
+        <div class="header__branding">
+            <a title="Tesla Website link" href="/" class="_clickable">
+                <img width="100px" height="10px" class="branding__logo" src="assets/icons/tesla-logo.svg"
+                    alt="Tesla Logo">
+            </a>
+        </div>
+
+        <nav class="header__nav">
+            <input id="menu-toggle" class="header__menu-toggle" type="checkbox" aria-label="Toggle Menu"
+                aria-haspopup="menu" />
+            <label class="header__button-container _clickable" for="menu-toggle">
+                <div class="header__menu-button"></div>
+            </label>
+            <ul role="menu" id="menu" class="header__menu">
+                <li class="_clickable" role="menuitem"><a href="https://www.tesla.com/en_eu/models" target="_blank" and
+                        rel="noopener noreferrer">Model S</a></li>
+                <li class="_clickable" role="menuitem"><a href="https://www.tesla.com/modelx" target="_blank" and
+                        rel="noopener noreferrer">MODEL X</a></li>
+                <li class="_clickable" role="menuitem"><a href="https://www.tesla.com/model3" target="_blank" and
+                        rel="noopener noreferrer">MODEL 3</a></li>
+                <li class="_clickable" role="menuitem"><a href="https://www.tesla.com/en_eu/roadster" target="_blank"
+                        and rel="noopener noreferrer">ROADSTER</a></li>
+                <li class="_clickable" role="menuitem"><a href="https://www.tesla.com/en_eu/energy" target="_blank" and
+                        rel="noopener noreferrer">ENERGY</a></li>
+
+            </ul>
+        </nav>
+        <div class="header__image-overlay" aria-hidden="true"></div>
+    </header>
+
+    <main class="main">
+        <section class="intro">
+            <h2 class="intro__title p-1 _fade-in _anim-delay-50ms _observed-fade-in">Far far away, behind the word
+                mountains…</h2>
+            <p class="intro__subtitle _fade-in _anim-delay-1s _observed-fade-in">A small river named Duden
+                flows by their
+                place and
+                supplies it with
+                the
+                necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your
+                mouth.</p>
+
+            <a id="scroll-button" role="button" href="#calculator" title="Scroll to the Calculator"
+                class="scroll-button _clickable _fade-in _anim-delay-1s _observed-fade-in mt-59 mb-59"
+                aria-label="Scroll to Calculator">
+                <span class="scroll-button__circle">
+                    <img width="28px" height="17px" class="scroll-button__icon _clickable-content _subtle-bounce"
+                        src="assets/icons/icon-chevron-down.svg" alt="Arrow Down">
+                </span>
+            </a>
+        </section>
+
+        <article class="calculation">
+
+            <h3 class="calculation__title">
+                Range Per Charge
+            </h3>
+            <figure class="car-demo">
+                <img class="car-demo__base"
+                    srcset="assets/images/car-base.webp 700w, assets/images/car-base@2x.webp 1400w"
+                    src="assets/images/car-base@2x.webp" alt="Car Base">
+                <img class="car-demo__wheel _left" src="assets/images/car-wheel@2x.webp"
+                    srcset="assets/images/car-wheel.webp 57w, assets/images/car-wheel@2x.webp 133w"
+                    sizes="(max-width: 400px) 67px, 133px" alt="Front Wheel">
+                <img class="car-demo__wheel _right" src="assets/images/car-wheel@2x.webp"
+                    srcset="assets/images/car-wheel.webp 57w, assets/images/car-wheel@2x.webp 133w"
+                    sizes="(max-width: 400px) 67px, 133px" alt="Back Wheel">
+                <figcaption class="car-demo__caption">Car Demonstration</figcaption>
+            </figure>
+
+            <form id="calculator" class="calculator">
+                <noscript>
+                    <div class="no-js-overlay">
+                        <h3>Enable JS</h3>
+                        <p>Unfortunately, this section of the website requires Javascript.</p>
+                        <p>Enable it, you won't regret it!</p>
+                    </div>
+                </noscript>
+                <div class="calculator__results">
+                    <div class="calculator__result">
+                        <label for="result-100d"><img width="147px" height="24px" src="assets/images/100d@2x.png"
+                                alt="100D Tesla model"></label>
+                        <span class="calculator__output">
+                            <output id="result-100d" name="result100D"
+                                aria-label="Result for 100D Tesla model">—</output>
+                            <sup>KM</sup>
+                        </span>
+                    </div>
+                    <div class="calculator__result">
+                        <label for="result-p100d"><img width="202px" height="26px" src="assets/images/p100d@2x.png"
+                                alt="P100D Tesla model"></label>
+                        <span class="calculator__output">
+                            <output id="result-p100d" name="resultP100D"
+                                aria-label="Result for P100D Tesla model">—</output>
+                            <sup>KM</sup>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="calculator__fields">
+                    <fieldset class="calculator__field-group">
+                        <div class="calculator__field">
+                            <legend>Speed</legend>
+                            <div class="base-input">
+                                <div class="base-input__items">
+                                    <input id="kmh" name="kmh" type="number" step="10" min="70" max="140" value="70"
+                                        readonly>
+                                    <label for="kmh" class="base-input__unit">KMH</label>
+                                </div>
+
+
+                                <div class="base-input__controls">
+                                    <button class="_clickable" type="button" data-direction="up" data-name="kmh"
+                                        aria-label="Increase Speed" aria-controls="kmh">
+                                        <span class="_clickable-content">
+                                            <svg width="25" height="8" xmlns="http://www.w3.org/2000/svg">
+                                                <use href="#thin-chevron-up">
+                                            </svg>
+                                        </span>
+                                    </button>
+                                    <button class="_clickable" type="button" data-direction="down" data-name="kmh"
+                                        aria-label="Decrease Speed" aria-controls="kmh">
+                                        <span class="_clickable-content">
+                                            <svg class="rotate180" width="25" height="8"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <use href="#thin-chevron-up">
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </fieldset>
+                    <div class="calculator__divider"></div>
+                    <fieldset class="calculator__field-group">
+                        <div class="calculator__field">
+                            <legend>Outside temperature</legend>
+                            <div class="base-input _align-right">
+                                <div class="base-input__items">
+                                    <input id="temp" name="temp" type="number" step="10" min="-10" max="40" value="-10"
+                                        readonly>
+                                    <label for="temp" class="base-input__deg">°</label>
+                                </div>
+
+
+                                <div class="base-input__controls">
+                                    <button class="_clickable" type="button" data-direction="up" data-name="temp"
+                                        aria-label="Increase Outside Temperature" aria-controls="temp">
+                                        <span class="_clickable-content">
+                                            <svg width="25" height="8" xmlns="http://www.w3.org/2000/svg">
+                                                <use href="#thin-chevron-up" />
+                                            </svg>
+                                        </span>
+                                    </button>
+                                    <button class="_clickable" type="button" data-direction="down" data-name="temp"
+                                        aria-label="Decrease Outside Temperature" aria-controls="temp">
+                                        <span class="_clickable-content">
+                                            <svg class="rotate180" width="25" height="8"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <use href="#thin-chevron-up" />
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="calculator__field">
+                            <div class="ac-toggle _clickable">
+
+
+                                <label for="ac">
+                                    <span class="ac-toggle__label">AC</span>
+                                    <input id="ac" name="ac" type="checkbox">
+                                    <div class="ac-toggle__info"></div>
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="calculator__divider"></div>
+                    <fieldset class="calculator__field-group">
+                        <div class="calculator__field">
+                            <legend>Wheels</legend>
+                            <div class="calculator__row">
+
+                                <div class="base-input _clickable _no-pad">
+
+                                    <label class="wheel-selection">
+                                        <img width="54px" height="54px" src="assets/icons/icon-wheel.svg"
+                                            alt="Wheel icon">
+                                        19″
+                                        <input type="radio" name="wheelsize" value="19" aria-label="Choose 19″ wheels"
+                                            checked="true">
+                                        <div class="wheel-selection__indicator"></div>
+                                    </label>
+
+                                </div>
+                                <div class="calculator__spacer"></div>
+                                <div class="base-input _clickable _no-pad">
+
+                                    <label class="wheel-selection">
+                                        <img width="67px" height="67px" src="assets/icons/icon-wheel.svg"
+                                            alt="Wheel icon">
+                                        21″
+                                        <input type="radio" name="wheelsize" value="21" aria-label="Choose 21″ wheels">
+                                        <div class="wheel-selection__indicator"></div>
+                                    </label>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </fieldset>
+                </div>
+            </form>
+
+            <p class="calculation__disclaimer">The actual amount of range that you experience will vary based on your
+                particular use conditions. Your
+                vehicle range is
+                also dependent on other conditions, such as vehicle configuration, battery age and condition, driving
+                style and
+                operating, environmental and climate conditions. See how some of these particular use conditions may
+                affect your range
+                in our simulation model.</p>
+        </article>
+        </section>
+    </main>
+
+
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="footer__group">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><a class="_clickable" href="tel:+44345678903">+44 345 678 903</a></li>
+                    <li><a class="_clickable" href="mailto:adobexd@mail.com">adobexd@mail.com</a></li>
+                    <li><a class="_clickable" href="#">Find a Store</a></li>
+                </ul>
+
+            </div>
+
+            <div class="footer__group">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a class="_clickable" href="#">Contact Us</a></li>
+                    <li><a class="_clickable" href="#">Ordering & Payment</a></li>
+                    <li><a class="_clickable" href="#">Shipping</a></li>
+                    <li><a class="_clickable" href="#">Returns</a></li>
+                    <li><a class="_clickable" href="#">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__group">
+                <h3>Information</h3>
+                <ul>
+                    <li><a class="_clickable" href="#">About this example</a></li>
+                    <li><a class="_clickable" href="#">Work With US</a></li>
+                    <li><a class="_clickable" href="#">Privacy Policy</a></li>
+                    <li><a class="_clickable" href="#">Terms & Conditions</a></li>
+                    <li><a class="_clickable" href="#">Press Enquiries</a></li>
+                    <!-- Add more information links here -->
+
+                </ul>
+            </div>
+
+            <div class="footer__group">
+                <h3 id="subscribe-text">Subscribe to Us</h3>
+                <a class="footer__highlighted-link _clickable" href="#">
+                    Stay updated with our latest news and offers
+                </a>
+                <form aria-labelledby="subscribe-text" name="subscribe">
+                    <label class="footer__hidden-label" for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Email Address" required>
+                    <button class="_clickable" type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+    </footer>
+
+
+    <div class="overlay" aria-hidden="true">
+        <div class="cursor">
+            <span class="cursor__circle" aria-hidden="true"></span>
+        </div>
+    </div>
+
+    <svg style="display: none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <symbol id="thin-chevron-up" viewBox="0 0 25.883 9.983">
+                <path d="M4995,2061.248l12.839-7.945,11.965,7.945" transform="translate(-4994.474 -2052.115)"
+                    fill="none" stroke="currentColor" stroke-width="2" />
+            </symbol>
+        </defs>
+        <use href="#thin-chevron-up" />
+    </svg>
+</body>
+
+</html>

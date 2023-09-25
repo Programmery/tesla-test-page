@@ -1,0 +1,65 @@
+@use '../../styles/common' as c;
+@use '../../styles/variables' as v;
+
+.car-demo {
+  @extend %flex-column;
+  position: relative;
+  transform: scale(1.3);
+  margin: 30px 0;
+  z-index: -1;
+
+  &__base {
+    max-width: 100%;
+  }
+
+  /* Hide the figcaption visually, but keep it accessible to screen readers */
+  &__caption {
+    @include c.size(1px, 1px);
+    @extend %a11y-friendly-hide;
+  }
+
+  &__wheel {
+    position: absolute;
+    bottom: 16.5%;
+    @include c.size(9vw, 9vw);
+    @include c.maxSize(125px, 125px);
+
+    &._left {
+      left: 25%;
+    }
+
+    &._right {
+      right: 26.8%;
+      animation-delay: 0.1s;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    &__wheel {
+      transform-origin: center;
+      animation: spin 0.3s linear infinite;
+    }
+  }
+
+  @media screen and (min-width: v.$max-content-width) {
+    & {
+      transform: scale(1);
+      z-index: 0;
+      margin: 0;
+    }
+
+    &__wheel {
+      @include c.size(125px, 125px);
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}

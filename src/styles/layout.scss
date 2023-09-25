@@ -1,0 +1,8 @@
+@use '../styles/common' as c;
+@use '../styles/variables' as v;
+
+.main {
+  @extend %flex-column;
+  max-width: v.$max-content-width;
+  margin: 0 auto;
+}

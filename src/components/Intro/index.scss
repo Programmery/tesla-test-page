@@ -1,0 +1,20 @@
+@use '../../styles/common' as c;
+@use '../../styles/variables' as v;
+
+.intro {
+  @extend %flex-column;
+  margin-top: 9vh;
+  text-align: center;
+
+  &__title {
+    @extend %font-64-64-light;
+    max-width: 810px;
+  }
+
+  &__subtitle {
+    @extend %font-16-22-regular;
+    font-family: v.$description-font-family;
+    max-width: 548px;
+    padding: 1.5em 2em 0;
+  }
+}

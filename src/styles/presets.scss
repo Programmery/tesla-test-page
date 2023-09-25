@@ -1,0 +1,103 @@
+@use '../styles/common' as c;
+@use '../styles/variables' as v;
+
+$fade-in-initial-transform: translateY(50px);
+
+/**
+ * Remove arrows from number inputs
+ * Chrome, Safari, Edge, Opera
+ */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  outline-color: v.$accent-color !important;
+}
+
+html {
+  font-family: v.$default-font-family;
+  // do not change font on IPhone orientation change
+  text-size-adjust: none;
+
+  &:focus-within {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1;
+  background: v.$background-default;
+  min-height: 100vh;
+  color: v.$text-color-primary;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+ul,
+fieldset,
+legend,
+blockquote,
+input,
+button,
+select {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+a,
+button,
+input,
+label {
+  cursor: default;
+  -webkit-tap-highlight-color: transparent;
+  border: none;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+img,
+picture,
+section {
+  display: block;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+}
+
+ol,
+ul {
+  list-style: none;
+}

@@ -1,0 +1,74 @@
+@use '../../styles/common' as c;
+@use '../../styles/variables' as v;
+
+.footer {
+  @extend %flex-row-center;
+  margin-top: 72px;
+  background-color: v.$background-dark;
+  color: v.$text-color-primary-contrast;
+  padding: 50px;
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 1400px;
+  }
+
+  &__group {
+    @extend %font-14-24-regular;
+    text-decoration: none;
+    margin-right: 95px;
+    margin-bottom: 48px;
+    max-width: 350px;
+
+    & h3 {
+      @extend %font-10-12-bold;
+      @include c.letterSpacing1;
+      text-transform: uppercase;
+      margin: 0 0 23px;
+      font-family: v.$default-font-family;
+    }
+
+    & li a {
+      text-decoration: none;
+      color: v.$text-color-primary-contrast;
+      font-family: v.$description-font-family;
+    }
+
+    & button {
+      @extend %font-10-12-bold;
+      background: v.$background-default;
+      color: v.$call-to-action-color;
+      padding: 14px 29px 12px;
+      text-transform: uppercase;
+      border-radius: 4px;
+    }
+  }
+  &__highlighted-link {
+    @extend %font-14-24-regular;
+    font-family: v.$description-font-family;
+    display: inline-block;
+    text-decoration: none;
+    color: v.$light-accent-color;
+    margin-bottom: 20px;
+  }
+
+  &__hidden-label {
+    @extend %a11y-friendly-hide;
+  }
+
+  & input {
+    @extend %font-14-24-regular;
+    font-family: v.$description-font-family;
+    border: 1px solid v.$light-accent-color;
+    background: v.$background-dark;
+    color: v.$text-color-primary-contrast;
+    width: 210px;
+    height: 40px;
+    border-radius: 4px;
+    padding: 12px 20px;
+    margin: 0 17px 18px 0;
+  }
+}
