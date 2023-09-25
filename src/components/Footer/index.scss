@@ -3,7 +3,7 @@
 
 .footer {
   @extend %flex-row-center;
-  padding: c.setSize(50px);
+  padding: c.setSize(50px) 0;
   margin-top: 72px;
   background-color: v.$background-dark;
   color: v.$text-color-primary-contrast;
@@ -19,7 +19,8 @@
   &__group {
     @extend %font-14-24-regular;
     text-decoration: none;
-    margin-right: c.setSize(95px);
+    margin-right: c.setSize(47px);
+    margin-left: c.setSize(50px);
     margin-bottom: c.setSize(48px);
     max-width: 350px;
 
@@ -37,6 +38,36 @@
       text-decoration: none;
     }
 
+    & form {
+      @extend %flex-row-center;
+      margin-bottom: c.setSize(18px);
+    }
+
+    & input {
+      @extend %font-14-24-regular;
+      font-family: v.$description-font-family;
+      border: 1px solid v.$light-accent-color;
+      background: v.$background-dark;
+      color: v.$text-color-primary-contrast;
+      max-width: 210px;
+      flex-grow: 1;
+      min-width: 150px;
+      height: c.setSize(40px);
+      border-radius: 4px;
+      padding: c.setSize(12px) c.setSize(20px);
+      margin-right: c.setSize(17px);
+
+      /* Removing autofill background-color */
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 30px transparent inset;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
     & button {
       @extend %font-10-12-bold;
       background: v.$background-default;
@@ -46,6 +77,7 @@
       border-radius: 4px;
     }
   }
+
   &__highlighted-link {
     @extend %font-14-24-regular;
     font-family: v.$description-font-family;
@@ -57,18 +89,5 @@
 
   &__hidden-label {
     @extend %a11y-friendly-hide;
-  }
-
-  & input {
-    @extend %font-14-24-regular;
-    font-family: v.$description-font-family;
-    border: 1px solid v.$light-accent-color;
-    background: v.$background-dark;
-    color: v.$text-color-primary-contrast;
-    width: 210px;
-    height: c.setSize(40px);
-    border-radius: 4px;
-    padding: c.setSize(12px) c.setSize(20px);
-    margin: 0 c.setSize(17px) c.setSize(18px) 0;
   }
 }
