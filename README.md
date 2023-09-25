@@ -14,6 +14,7 @@ Now wait for static files to generate into (you guessed it) `static` folder.
 It takes a bit of time because of image compression.
 After it is done, you can open the HTML-file and play around.
 
+
 ## Test it, it works
 To test the project run:
 ```console
@@ -78,6 +79,15 @@ Since it is essentially a JS,HTML,CSS project, components are just folders with 
 There were alternatives to this decision, but the one that I liked the most (building an SSR server with Vue/React-like components) was not possible: the task forbids usage of frameworks like express.
 
 Components communicate with each other through their Controllers and subscriptions. Form tracks updates and triggers necessary updates in other components.
+
+### Local development
+To contrubute to the project and view it locally run:
+
+For local development you can run: 
+```console
+npm i
+npm start
+```
 
 ## Found a bug? 🐛 Want something more?
 Hit me up and I will fix it! :)
