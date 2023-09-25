@@ -9,7 +9,9 @@ To build the project simply run:
 ```console
 npm run build
 ```
-Now wait for static files to generate into (you guessed it) `static` folder. You can now open the HTML-file and play around.
+Now wait for static files to generate into (you guessed it) `static` folder. 
+It takes a bit of time because of image compression.
+After it is done, you can open the HTML-file and play around.
 
 ## Test it, it works
 To test the project run:
@@ -55,6 +57,8 @@ Data for calculator was converted into a map for `O(1)` access at runtime and le
 It is a pre-optimization, but in production data could be larger.
 To see the script that I made for data denormalization, [click here.](https://github.com/Programmery/tesla-test-page/blob/d9886abe13beab77826a69e430d0afaf3034db14/src/data/getCalculatorDataMap.ts).
 
+And yes, it is also covered by the test.
+
 ### Performance
 1. All media is compressed during build process.
 2. CSS and JS are minifed.
@@ -70,12 +74,12 @@ To see the script that I made for data denormalization, [click here.](https://gi
    
 ### Components
 Since it is essentially a JS,HTML,CSS project, components are just folders with appropriate styles. 
-There were alternatives to this decision, but the one that I liked the most (building an SSR server with Vue/React-like components) was not possible in a short time. The task forbids usage of frameworks like express.
+There were alternatives to this decision, but the one that I liked the most (building an SSR server with Vue/React-like components) was not possible: the task forbids usage of frameworks like express.
 
 Components communicate with each other through their Controllers and subscriptions. Form tracks updates and triggers necessary updates in other components.
 
 ## Found a bug? 🐛 Want something more?
-Apologies, hit me up and I will fix it :)
+Hit me up and I will fix it! :)
 
 This project was done in short time, but I tried to pay attention to the details and make it fun too.
 

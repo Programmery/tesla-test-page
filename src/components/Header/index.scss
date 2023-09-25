@@ -103,20 +103,12 @@ $top-bar-height: 4.68vw;
     color: v.$text-color-primary-contrast;
     text-transform: uppercase;
     padding: 12px;
-    background: linear-gradient(
-        rgba(255, 255, 255, 0.1) 0,
-        rgba(255, 255, 255, 0.1) 0
-      )
-      bottom / 0 1px no-repeat;
+    background: linear-gradient(rgba(255, 255, 255, 0.1) 0, rgba(255, 255, 255, 0.1) 0) bottom / 0 1px no-repeat;
     transition: background 0.15s ease-out;
 
     &:hover,
     a:focus {
-      background: linear-gradient(
-          rgba(255, 255, 255, 1) 0,
-          rgba(255, 255, 255, 1) 0
-        )
-        bottom / 80% 1px no-repeat;
+      background: linear-gradient(rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 1) 0) bottom / 80% 1px no-repeat;
     }
   }
 
@@ -162,6 +154,7 @@ $top-bar-height: 4.68vw;
   @media screen and (min-width: v.$media-bp-tablets) {
     &__nav {
       width: 100%;
+
       display: flex;
       justify-content: center;
       align-items: center;
@@ -176,6 +169,7 @@ $top-bar-height: 4.68vw;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+      max-height: 76px;
       @include c.size(100%, unset);
       max-width: 720px;
 
@@ -195,11 +189,7 @@ $top-bar-height: 4.68vw;
       pointer-events: none;
       z-index: 1;
       @include c.stretchAbsolute;
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.4) 20%,
-        transparent 50%
-      );
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 20%, transparent 50%);
     }
   }
 }

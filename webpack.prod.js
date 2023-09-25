@@ -1,5 +1,3 @@
-const webpack = require('webpack');
-const dotenv = require('dotenv');
 const path = require('path');
 const common = require('./webpack.common');
 const {merge} = require('webpack-merge');
@@ -74,9 +72,6 @@ module.exports = merge(common, {
     ],
   },
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env': JSON.stringify(dotenv.config({path: path.resolve(process.cwd(), '.env.prod')}).parsed),
-    }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css',

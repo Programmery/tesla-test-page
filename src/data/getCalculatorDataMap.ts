@@ -24,10 +24,7 @@ const convertDataToMap = (data: DataItem[]) => {
   }, Object.create(null));
 };
 
-const getCalculatorDataMap = (
-  data100D: DataItem[],
-  dataP100D: DataItem[],
-): CalculatorResultMap => {
+export const getCalculatorDataMap = (data100D: DataItem[], dataP100D: DataItem[]): CalculatorResultMap => {
   const data100DMap = convertDataToMap(data100D);
   const dataP100DMap = convertDataToMap(dataP100D);
 
@@ -37,19 +34,14 @@ const getCalculatorDataMap = (
 const writeDataToFile = (data: CalculatorResultMap) => {
   JSON.stringify(data);
 
-  writeFile(
-    'denormalised-data-map.json',
-    JSON.stringify(data).replace(/\s+/, ''),
-    'utf8',
-    err => {
-      if (err) {
-        console.error('Error while writing the file');
-        return console.error(err);
-      }
+  writeFile('denormalised-data-map.json', JSON.stringify(data).replace(/\s+/, ''), 'utf8', err => {
+    if (err) {
+      console.error('Error while writing the file');
+      return console.error(err);
+    }
 
-      return console.log('JSON file has been saved.');
-    },
-  );
+    return console.log('JSON file has been saved.');
+  });
 };
 
 const getDataMapFile = (data100D: DataItem[], dataP100D: DataItem[]) => {
@@ -57,4 +49,8 @@ const getDataMapFile = (data100D: DataItem[], dataP100D: DataItem[]) => {
   writeDataToFile(calculatorDataMap);
 };
 
-getDataMapFile(exampleData100D, exampleDataP100D);
+export const executeScript = () => getDataMapFile(exampleData100D, exampleDataP100D);
+/**
+ * To execute script - uncomment this:
+ * executeScript()
+ */
