@@ -7,6 +7,7 @@
 
 To build the project simply run:
 ```console
+npm i
 npm run build
 ```
 Now wait for static files to generate into (you guessed it) `static` folder. 
