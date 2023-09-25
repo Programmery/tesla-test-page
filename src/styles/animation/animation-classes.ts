@@ -1,0 +1,9 @@
+export const CLICKABLE_CLASS = '_clickable';
+export const VISIBLE_CLASS = '_visible';
+export const ACTIVE_CLASS = '_active';
+export const FADE_IN_CLASS = '_fade-in';
+export const OBSERVED_FADE_IN = '_observed-fade-in';
+export const ANIMATION_DELAY_50MS = '_anim-delay-50ms';
+export const ANIMATION_DELAY_1S = '_anim-delay-1s';
+export const AC_CLASS = '_ac';
+export const HEAT_CLASS = '_heat';

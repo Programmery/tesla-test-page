@@ -1,0 +1,169 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "jest": true
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [
+                    ".js",
+                    ".ts"
+                ]
+            }
+        }
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:import/typescript",
+        "airbnb",
+        "prettier"
+    ],
+    "plugins": [
+        "@typescript-eslint",
+        "import"
+    ],
+    "rules": {
+        "no-continue": "off",
+        "no-plusplus": "off",
+        "class-methods-use-this": "off",
+        "no-param-reassign": "off",
+        "no-shadow": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "import/prefer-default-export": "off",
+        "consistent-return": "warn",
+        "no-multi-spaces": "error",
+        "@typescript-eslint/ban-types": "error",
+        "no-global-assign": "error",
+        "no-eq-null": "error",
+        "no-var": "error",
+        "new-cap": "error",
+        "object-shorthand": "error",
+        "array-callback-return": "error",
+        "no-eval": "error",
+        "no-implied-eval": "error",
+        "yoda": "error",
+        "wrap-iife": "error",
+        "no-new-func": "error",
+        "no-new-wrappers": "error",
+        "prefer-arrow-callback": "error",
+        "dot-notation": "error",
+        "eol-last": "error",
+        "no-shadow-restricted-names": "error",
+        "no-label-var": "error",
+        "curly": "error",
+        "prefer-template": "error",
+        "no-useless-concat": "error",
+        "no-useless-escape": "error",
+        "prefer-spread": "error",
+        "prefer-rest-params": "error",
+        "prefer-const": "error",
+        "quote-props": "off",
+        "default-case": "off",
+        "no-console": "off",
+        "arrow-body-style": "off",
+        "no-unused-vars": "off",
+        "no-prototype-builtins": "warn",
+        "@typescript-eslint/no-useless-constructor": "error",
+        "@typescript-eslint/restrict-plus-operands": "off",
+        "@typescript-eslint/prefer-interface": "off",
+        "@typescript-eslint/prefer-namespace-keyword": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/interface-name-prefix": "off",
+        "@typescript-eslint/explicit-member-accessibility": "off",
+        "@typescript-eslint/array-type": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/no-inferrable-types": "off",
+        "import/no-duplicates": "error",
+        "import/no-mutable-exports": "error",
+        "import/first": "error",
+        "import/no-webpack-loader-syntax": "error",
+        "@typescript-eslint/no-unused-vars": [
+            "warn"
+        ],
+        "@typescript-eslint/no-shadow": [
+            "error"
+        ],
+        "no-unused-expressions": [
+            "error",
+            {
+                "allowShortCircuit": true,
+                "allowTernary": true
+            }
+        ],
+        "no-restricted-syntax": [
+            "error",
+            "WithStatement"
+        ],
+        "max-len": [
+            "error",
+            {
+                "code": 140
+            }
+        ],
+        "one-var": [
+            "error",
+            "never"
+        ],
+        "eqeqeq": [
+            "error",
+            "always"
+        ],
+        "prefer-destructuring": [
+            "error",
+            {
+                "VariableDeclarator": {
+                    "object": true
+                },
+                "AssignmentExpression": {}
+            },
+            {
+                "enforceForRenamedProperties": false
+            }
+        ],
+        "@typescript-eslint/no-explicit-any": [
+            "error",
+            {
+                "ignoreRestArgs": false
+            }
+        ],
+        "@typescript-eslint/naming-convention": [
+            "error",
+            {
+                "selector": "typeParameter",
+                "format": [
+                    "PascalCase"
+                ],
+                "custom": {
+                    "regex": "^[A-Z][A-Za-z]*$",
+                    "match": true
+                }
+            }
+        ],
+        "@typescript-eslint/ban-ts-comment": [
+            "error",
+            {
+                "ts-ignore": "allow-with-description"
+            }
+        ],
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "js": "never",
+                "ts": "never"
+            }
+        ]
+    }
+}

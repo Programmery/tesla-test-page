@@ -1,0 +1,146 @@
+@use './variables' as v;
+
+$line-height-multiplier: 1.4;
+
+/* layout */
+
+%flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+%flex-row-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin maxSize($width, $height) {
+  max-width: $width;
+  max-height: $height;
+}
+
+@mixin stretchFixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@mixin stretchAbsolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+%a11y-friendly-hide {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+/* Font settings */
+@mixin fontSize($size, $height) {
+  font-size: $size;
+  line-height: $height;
+}
+
+@mixin fontRegular {
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+@mixin fontBold {
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+}
+
+@mixin fontLight {
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+@mixin letterSpacing1 {
+  letter-spacing: 0.1em;
+}
+@mixin letterSpacing15 {
+  letter-spacing: 0.15em;
+}
+
+%font-10-14-light {
+  @include fontLight;
+  @include fontSize($size: 10px, $height: 14px);
+}
+
+%font-20-25-light {
+  @include fontLight;
+  @include fontSize($size: 20px, $height: 25px);
+}
+
+%font-64-64-light {
+  @include fontLight;
+  @include fontSize($size: 64px, $height: 64px);
+
+  @media screen and (max-width: v.$media-bp-tablets) {
+    @include fontSize($size: 38px, $height: 1.1);
+  }
+}
+
+%font-14-24-regular {
+  @include fontRegular;
+  @include fontSize($size: 14px, $height: 24px);
+}
+
+%font-16-22-regular {
+  @include fontRegular;
+  @include fontSize($size: 16px, $height: 22px);
+}
+
+%font-20-regular {
+  @include fontRegular;
+  @include fontSize(
+    $size: 20px,
+    $height: 20px * $line-height-multiplier
+  ); // no line-height in design
+}
+
+%font-34-43-regular {
+  @include fontRegular;
+  @include fontSize($size: 34px, $height: 43px);
+}
+
+%font-38-regular {
+  @include fontRegular;
+  @include fontSize($size: 38px, $height: 38px * $line-height-multiplier);
+
+  @media screen and (max-width: v.$media-bp-tablets) {
+    @include fontSize($size: 28px, $height: 1.1);
+  }
+}
+
+%font-46-58-regular {
+  @include fontRegular;
+  @include fontSize($size: 46px, $height: 58px);
+}
+
+%font-10-12-bold {
+  @include fontBold;
+  @include fontSize($size: 10px, $height: 12px);
+}
+
+%font-14-19-bold {
+  @include fontBold;
+  @include fontSize($size: 14px, $height: 19px);
+}

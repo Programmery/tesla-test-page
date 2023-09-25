@@ -1,0 +1,22 @@
+@use '../../styles/common' as c;
+@use '../../styles/variables' as v;
+
+.no-js-overlay {
+  @include c.stretchAbsolute;
+  text-align: center;
+  @extend %flex-column;
+  background-color: v.$background-secondary;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  z-index: v.$element-overlay;
+
+  & h3 {
+    @extend %font-14-19-bold;
+    text-transform: uppercase;
+  }
+
+  & p {
+    margin: 14px 0 0;
+  }
+}

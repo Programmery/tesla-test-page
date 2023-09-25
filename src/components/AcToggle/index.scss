@@ -1,0 +1,117 @@
+@use '../../styles/common' as c;
+@use '../../styles/variables' as v;
+
+.ac-toggle {
+  position: relative;
+  margin-top: 22px;
+  user-select: none;
+
+  & label {
+    position: relative;
+    @extend %flex-column;
+    @include c.size(123px, 123px);
+    border-radius: 50%;
+    text-transform: uppercase;
+  }
+
+  & input,
+  &__label {
+    @extend %a11y-friendly-hide;
+  }
+
+  &__info {
+    @extend %flex-column;
+    @include c.stretchAbsolute;
+    justify-content: center;
+    color: v.$text-color-secondary;
+    box-shadow: 3px 3px 5px #919191;
+    border: 1px solid v.$stroke-color-tertiary;
+    background: radial-gradient(
+      v.$background-default 60%,
+      v.$background-secondary 61%
+    );
+    border-radius: 50%;
+    pointer-events: none;
+
+    &::before {
+      @extend %font-10-14-light;
+      @include c.size(65px, 14px);
+      color: v.$text-color-secondary;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &::after {
+      content: '';
+      @include c.stretchAbsolute;
+      color: v.$text-color-secondary;
+      background-position-x: center;
+      background-position-y: 66%;
+      background-repeat: no-repeat;
+      background-size: 29%;
+      height: 100%;
+      width: 100%;
+    }
+
+    &._heat::before {
+      content: 'HEAT OFF';
+    }
+
+    &._ac::before {
+      content: 'AC OFF';
+    }
+
+    &._heat::after {
+      background-image: url('icons/icon-wave-gray.svg');
+    }
+
+    &._ac::after {
+      background-image: url('icons/icon-fan-gray.svg');
+    }
+  }
+
+  & input:focus + &__info {
+    border: 2px solid v.$accent-color;
+  }
+
+  & input:checked + &__info {
+    box-shadow: inset 1px 1px 1px #919191;
+
+    &._heat {
+      background: radial-gradient(
+        v.$background-red 60%,
+        v.$background-secondary 61%
+      );
+
+      &::before {
+        color: v.$text-color-primary-contrast;
+        content: 'HEAT ON';
+      }
+    }
+
+    &._ac {
+      background: radial-gradient(
+        v.$accent-color 60%,
+        v.$background-secondary 61%
+      );
+
+      &::before {
+        color: v.$text-color-primary-contrast;
+        content: 'AC ON';
+      }
+    }
+
+    &._heat::after {
+      background-image: url('icons/icon-wave-white.svg');
+    }
+
+    &._ac::after {
+      background-image: url('icons/icon-fan-white.svg');
+    }
+  }
+}

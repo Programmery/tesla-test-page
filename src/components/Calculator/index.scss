@@ -1,0 +1,95 @@
+@use '../../styles/common' as c;
+@use '../../styles/variables' as v;
+
+.calculator {
+  @extend %flex-column;
+  width: 100%;
+  position: relative;
+
+  &__results {
+    @include c.letterSpacing1;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: v.$accent-color;
+    flex-wrap: wrap;
+    margin-top: 2vh;
+
+    & label {
+      display: block;
+      margin-bottom: 2vh;
+    }
+
+    & output {
+      @extend %font-46-58-regular;
+    }
+
+    & sup {
+      @extend %font-20-25-light;
+      margin-top: 5px;
+      margin-left: 5px;
+    }
+  }
+
+  &__result {
+    @extend %flex-column;
+    @include c.size(280px, 139px);
+    justify-content: center;
+  }
+
+  &__output {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__fields {
+    @extend %flex-row-center;
+    margin-top: 5vh;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  &__field-group {
+    @extend %flex-row-center;
+    flex-wrap: wrap;
+    border: none;
+    margin: 8px 0 32px;
+  }
+  &__divider {
+    background-color: v.$stroke-color-secondary;
+    @include c.size(1px, 128px);
+    margin: -22px 23px 0;
+
+    @media screen and (max-width: v.$max-content-width) {
+      display: none;
+    }
+  }
+
+  &__spacer {
+    width: 32px;
+  }
+
+  @media screen and (max-width: v.$media-bp-desktop-s) {
+    &__field-group,
+    &__field-group:not(:last-child) {
+      margin: 8px 12px 32px;
+    }
+  }
+
+  &__field {
+    margin: 0 22px;
+    position: relative;
+  }
+
+  &__field legend {
+    @extend %font-20-25-light;
+    display: block;
+    color: v.$text-color-secondary;
+    margin-bottom: 22px;
+  }
+
+  &__row {
+    @extend %flex-row-center;
+    flex-wrap: wrap;
+  }
+}

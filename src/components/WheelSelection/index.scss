@@ -1,0 +1,27 @@
+@use '../../styles/common' as c;
+@use '../../styles/variables' as v;
+
+.wheel-selection {
+  position: relative;
+  @include c.size(100%, 100%);
+  @extend %flex-row-center;
+  @extend %font-20-regular;
+
+  & img {
+    margin-right: 2.5rem;
+  }
+
+  & input {
+    @extend %a11y-friendly-hide;
+  }
+
+  &__indicator {
+    @include c.stretchAbsolute;
+    pointer-events: none;
+  }
+
+  & input:checked + &__indicator,
+  & input:focus + &__indicator {
+    border: 2px solid v.$accent-color;
+  }
+}

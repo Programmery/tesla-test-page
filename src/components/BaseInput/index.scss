@@ -1,0 +1,69 @@
+@use '../../styles/common' as c;
+@use '../../styles/variables' as v;
+
+.base-input {
+  @extend %flex-row-center;
+  @include c.size(233px, 81px);
+  background-color: v.$background-secondary;
+  border: 1px solid v.$stroke-color-secondary;
+  padding: 0 11px;
+
+  &._no-pad {
+    padding: 0;
+  }
+
+  &._align-right input {
+    text-align: right;
+  }
+
+  &__items {
+    @extend %flex-row-center;
+    @extend %font-34-43-regular;
+    flex: 1;
+  }
+
+  &__controls {
+    @extend %flex-column;
+  }
+
+  & input {
+    background: none;
+    border: none;
+    pointer-events: none;
+
+    &:focus {
+      outline: transparent;
+    }
+  }
+
+  & button {
+    @include c.size(40px, 40px);
+    @extend %flex-row-center;
+    background: none;
+    border: none;
+    color: v.$accent-color;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid v.$stroke-color-secondary;
+    }
+
+    &:disabled {
+      color: v.$stroke-color-secondary;
+    }
+  }
+
+  &__unit {
+    transform: translateY(5px);
+    @extend %font-20-25-light;
+  }
+
+  &__deg {
+    display: block;
+    width: 20px;
+    text-align: left;
+  }
+}
+
+.rotate180 {
+  transform: rotate(180deg);
+}

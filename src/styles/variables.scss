@@ -1,0 +1,32 @@
+/* Media breakpoints */
+$media-bp-tablets: 768px;
+$media-bp-desktop-s: 1024px;
+$max-content-width: 1400px;
+
+/* z-indexes */
+$page-overlay-z-index: 1000;
+$fixed-top-bar: 100;
+$element-overlay: 50;
+
+/* Font Families */
+$default-font-family: 'Montserrat', sans-serif;
+$description-font-family: 'Arial', sans-serif;
+
+/* Colors */
+$background-default: white;
+$background-branding: #121212;
+$background-secondary: #f0f2f7;
+$background-dark: black;
+$background-red: #cc0000;
+
+$text-color-primary: #040c36;
+$text-color-primary-contrast: white;
+$text-color-secondary: #707070;
+
+$stroke-color-primary: #040c36;
+$stroke-color-secondary: #b9bed1;
+$stroke-color-tertiary: #e3e8f0;
+
+$accent-color: #008dff;
+$light-accent-color: #7fc4fd;
+$call-to-action-color: #2699fb;
