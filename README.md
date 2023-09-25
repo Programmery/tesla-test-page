@@ -21,7 +21,7 @@ It has some unit tests and also checks the validity of HTML, presence of all the
 ## It is fast, accessible and SEO-friendly
 Made according to SEO and a11y standards.
 
-<img width="547" alt="Screenshot 2023-09-25 at 13 26 04" src="https://github.com/Programmery/tesla-test-page/assets/46135520/85289eaa-2727-4322-9493-ba15bf2fc146">
+<img width="497" alt="Screenshot 2023-09-25 at 18 15 06" src="https://github.com/Programmery/tesla-test-page/assets/46135520/ed75548f-7b66-4151-b34a-1e63086da804">
 
 Elements that function like checkboxes or radio buttons actually ARE checkboxes and radio buttons, just more stylish.
 Some fun animations too (more on that in the Animations section), but if you prefer less motion, animations are disabled.
