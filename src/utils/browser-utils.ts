@@ -31,8 +31,11 @@ const preloadImage = (src: string): Promise<void> =>
     image.src = src;
   });
 
-const getScrollPositionY = () => document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset || 0;
+const getScrollPositionY = () =>
+  document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset || 0;
 
 const preventDefault = (e?: Event) => e?.cancelable && e.preventDefault();
 
-export {isMouseDevice, isPassiveSupported, hasReducedMotion, preloadImage, preventDefault, getScrollPositionY};
+const passiveIfSupported = isPassiveSupported ? {passive: true} : undefined;
+
+export {isMouseDevice, passiveIfSupported, hasReducedMotion, preloadImage, preventDefault, getScrollPositionY};

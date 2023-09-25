@@ -1,4 +1,4 @@
-export const CLICKABLE_CLASS = '_clickable';
+export const CLICKABLE_CLASS = 'clickable';
 export const VISIBLE_CLASS = '_visible';
 export const ACTIVE_CLASS = '_active';
 export const FADE_IN_CLASS = '_fade-in';

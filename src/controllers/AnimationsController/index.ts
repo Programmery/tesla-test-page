@@ -1,11 +1,5 @@
-import {
-  hasReducedMotion,
-  isPassiveSupported,
-  isMouseDevice,
-  getScrollPositionY,
-} from '../../utils/browser-utils';
+import {hasReducedMotion, passiveIfSupported, isMouseDevice, getScrollPositionY} from '../../utils/browser-utils';
 import {InitParams} from './types';
-
 import {
   OBSERVED_FADE_IN,
   FADE_IN_CLASS,
@@ -15,8 +9,6 @@ import {
   CLICKABLE_CLASS,
   ACTIVE_CLASS,
 } from '../../styles/animation/animation-classes';
-
-const passiveIfSupported = isPassiveSupported ? {passive: true} : undefined;
 
 export class AnimationsController {
   parallaxMultiplier = 0.2;
@@ -28,7 +20,7 @@ export class AnimationsController {
     this.cursorElement = cursorElement;
   }
 
-  activate() {
+  public activate() {
     if (hasReducedMotion) {
       return;
     }
@@ -44,9 +36,7 @@ export class AnimationsController {
       return;
     }
     const onScrollEffect = () => {
-      parallaxEl.style.transform = `translate3d(0px, ${
-        window.scrollY * this.parallaxMultiplier
-      }px, 0px)`;
+      parallaxEl.style.transform = `translate3d(0px, ${window.scrollY * this.parallaxMultiplier}px, 0px)`;
     };
 
     window.addEventListener('scroll', onScrollEffect, passiveIfSupported);
@@ -57,18 +47,11 @@ export class AnimationsController {
       return;
     }
     const observedElements = document.getElementsByClassName(OBSERVED_FADE_IN);
-    const animateOnVisible = (entry: IntersectionObserverEntry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add(FADE_IN_CLASS);
-      }
-    };
 
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(animateOnVisible);
-      },
-      {threshold: 0.1},
-    );
+    const animateOnVisible = (entry: IntersectionObserverEntry) =>
+      entry.isIntersecting && entry.target.classList.add(FADE_IN_CLASS);
+
+    const observer = new IntersectionObserver(entries => entries.forEach(animateOnVisible), {threshold: 0.1});
 
     for (const element of observedElements) {
       /**
@@ -97,44 +80,28 @@ export class AnimationsController {
       return;
     }
 
-    window.addEventListener(
-      'scroll',
-      () => cursorEl.classList.remove(VISIBLE_CLASS),
-      passiveIfSupported,
-    );
+    window.addEventListener('scroll', () => cursorEl.classList.remove(VISIBLE_CLASS), passiveIfSupported);
+    document?.addEventListener('mouseenter', () => cursorEl.classList.add(VISIBLE_CLASS), passiveIfSupported);
+    document?.addEventListener('mouseleave', () => cursorEl.classList.remove(VISIBLE_CLASS), passiveIfSupported);
 
-    document?.addEventListener('mouseenter', () => {
-      cursorEl.classList.add(VISIBLE_CLASS);
-    });
-
-    document?.addEventListener('mouseleave', () => {
-      cursorEl.classList.remove(VISIBLE_CLASS);
-    });
-
-    document?.addEventListener(
-      'mousemove',
-      e => {
+    const mouseMoveHandler = (e: MouseEvent) => {
+      requestAnimationFrame(() => {
         if (!this.cursorElement) {
           return;
         }
         cursorEl.classList.add(VISIBLE_CLASS);
         const {clientX: x, clientY: y} = e;
-        requestAnimationFrame(() => {
-          cursorEl.style.transform = `translate3d(${x}px, ${y}px, 0px)`;
-        });
-      },
-      passiveIfSupported,
-    );
+        cursorEl.style.transform = `translate3d(${x}px, ${y}px, 0px)`;
+      });
+    };
+
+    document?.addEventListener('mousemove', mouseMoveHandler, passiveIfSupported);
 
     const clickableElements = document.getElementsByClassName(CLICKABLE_CLASS);
 
     for (const element of clickableElements) {
-      element.addEventListener('mouseenter', () =>
-        cursorEl.classList.add(ACTIVE_CLASS),
-      );
-      element.addEventListener('mouseleave', () =>
-        cursorEl.classList.remove(ACTIVE_CLASS),
-      );
+      element.addEventListener('mouseenter', () => cursorEl.classList.add(ACTIVE_CLASS), passiveIfSupported);
+      element.addEventListener('mouseleave', () => cursorEl.classList.remove(ACTIVE_CLASS), passiveIfSupported);
     }
   };
 }

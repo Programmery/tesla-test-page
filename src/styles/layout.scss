@@ -8,12 +8,6 @@
   outline-color: v.$accent-color !important;
 }
 
-.main {
-  @extend %flex-column;
-  max-width: v.$max-content-width;
-  margin: 0 auto;
-}
-
 html {
   font-family: v.$default-font-family;
   font-size: v.$default-font-size + px;
@@ -41,4 +35,10 @@ body {
   background: v.$background-default;
   color: v.$text-color-primary;
   min-height: 100vh;
+}
+
+.main {
+  @extend %flex-column;
+  max-width: v.$max-content-width;
+  margin: 0 auto;
 }

@@ -1,12 +1,8 @@
-import {
-  UpdateDisabledStateParams,
-  DirectionToButtonMap,
-} from '../../components/BaseInput/types';
+import {UpdateDisabledStateParams, DirectionToButtonMap} from './types';
 import {clamp} from '../../utils/custom';
 
 export class InputButtonsController {
   inputs: HTMLInputElement[];
-
   subscribers: Array<() => void> = [];
 
   constructor(inputs: HTMLInputElement[]) {
@@ -27,12 +23,7 @@ export class InputButtonsController {
     }, Object.create(null));
   }
 
-  private updateButtonDisabledStates = ({
-    newValue,
-    min,
-    max,
-    directionToButtonMap,
-  }: UpdateDisabledStateParams) => {
+  private updateButtonDisabledStates = ({newValue, min, max, directionToButtonMap}: UpdateDisabledStateParams) => {
     const buttonUp = directionToButtonMap.up;
     const buttonDown = directionToButtonMap.down;
 
@@ -75,19 +66,12 @@ export class InputButtonsController {
 
   private activateInputButtons() {
     for (const input of this.inputs) {
-      const buttonList = document.querySelectorAll<HTMLButtonElement>(
-        `[data-name="${input.name}"]`,
-      );
+      const buttonList = document.querySelectorAll<HTMLButtonElement>(`[data-name="${input.name}"]`);
 
-      const directionToButtonMap = this.generateDirectionToButtonMap([
-        ...buttonList,
-      ]);
+      const directionToButtonMap = this.generateDirectionToButtonMap([...buttonList]);
 
       buttonList.forEach(button =>
-        button.addEventListener(
-          'click',
-          this.generateButtonClickHandler(input, button, directionToButtonMap),
-        ),
+        button.addEventListener('click', this.generateButtonClickHandler(input, button, directionToButtonMap)),
       );
     }
   }

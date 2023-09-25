@@ -1,6 +1,6 @@
 import {AC_CLASS, HEAT_CLASS} from '../../styles/animation/animation-classes';
+import {passiveIfSupported} from '../../utils/browser-utils';
 import {FormDataMap} from '../FormController/types';
-
 import {InitData} from './types';
 
 export class AcToggleController {
@@ -12,7 +12,11 @@ export class AcToggleController {
     this.updateAcToggle(initialFormData);
   }
 
-  updateAcToggle = (formData: FormDataMap<'temp'>) => {
+  public activate() {
+    this.preventFocusOnMouseClick();
+  }
+
+  public updateAcToggle = (formData: FormDataMap<'temp'>) => {
     const temp = (formData.temp && +formData.temp) || 0;
 
     if (temp >= this.warmTemp) {
@@ -24,10 +28,6 @@ export class AcToggleController {
     this.acToggleElement.classList.add(HEAT_CLASS);
   };
 
-  activate() {
-    this.preventFocusOnMouseClick();
-  }
-
   /**
    * Design choice:
    * We do not want a focus state to trigger on checkbox click.
@@ -38,12 +38,8 @@ export class AcToggleController {
    * but checkbox is better for accessibility here.
    */
   private preventFocusOnMouseClick() {
-    const checkbox =
-      document.querySelector<HTMLInputElement>('.ac-toggle input');
-
+    const checkbox = document.querySelector<HTMLInputElement>('.ac-toggle input');
     checkbox &&
-      window?.addEventListener('mouseup', () => {
-        requestAnimationFrame(() => checkbox.blur());
-      });
+      window?.addEventListener('mouseup', () => requestAnimationFrame(() => checkbox.blur()), passiveIfSupported);
   }
 }

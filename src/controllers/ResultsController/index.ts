@@ -14,7 +14,7 @@ export class ResultsController<T extends FormDataMap<string>> {
     this.updateResultsUI(initialFormData);
   }
 
-  updateResultsUI = (formData: T) => {
+  public updateResultsUI = (formData: T) => {
     if (!this.element) {
       return;
     }

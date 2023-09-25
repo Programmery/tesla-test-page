@@ -2,10 +2,9 @@
 @use '../../styles/variables' as v;
 
 .car-demo {
-  position: relative;
   display: block;
+  position: relative;
   width: 100%;
-
   margin: 30px 0;
   z-index: -1;
 
@@ -19,7 +18,6 @@
   }
 
   &__caption {
-    @include c.size(1px, 1px);
     @extend %a11y-friendly-hide;
   }
 
@@ -32,7 +30,6 @@
     &._left {
       left: 25%;
     }
-
     &._right {
       right: 26.8%;
       animation-delay: 0.1s;
@@ -63,7 +60,6 @@
   0% {
     transform: rotate(0deg);
   }
-
   100% {
     transform: rotate(-360deg);
   }

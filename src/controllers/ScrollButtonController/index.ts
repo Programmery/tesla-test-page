@@ -16,7 +16,7 @@ export class ScrollButtonController {
     this.destinationElement = destinationElement;
   }
 
-  activate() {
+  public activate() {
     this.button?.addEventListener('click', this.scrollToButtonHref);
   }
 
@@ -24,13 +24,13 @@ export class ScrollButtonController {
     if (!this.destinationElement || !this.button) {
       return;
     }
-    const {animationDuration, destinationElement} = this;
     preventDefault(e);
+
+    const {animationDuration, destinationElement} = this;
     const toY = destinationElement.offsetTop - this.extraSpace;
-
     const startY = getScrollPositionY();
-
     const diffY = toY - startY;
+
     let startTime = 0;
 
     // eslint-disable-next-line prefer-arrow-callback

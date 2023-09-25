@@ -6,11 +6,11 @@
   width: 100%;
 
   &__title {
-    @extend %font-38-regular;
+    @extend %font-38-regular-adaptive;
     @extend %flex-row-center;
     margin: c.setSize(8px);
-    text-align: center;
     min-height: c.setSize(30px);
+    text-align: center;
   }
 
   &__disclaimer {

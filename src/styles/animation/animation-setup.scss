@@ -52,8 +52,8 @@ $fade-in-initial-transform: translateY(50px);
   }
 }
 
-._clickable {
-  &-content {
+.clickable {
+  &__content {
     transition: transform 0.15s ease-out;
     transform-origin: center;
   }

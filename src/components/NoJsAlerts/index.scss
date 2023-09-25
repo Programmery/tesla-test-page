@@ -3,13 +3,12 @@
 
 .no-js-overlay {
   @include c.stretchAbsolute;
-  text-align: center;
   @extend %flex-column;
-  background-color: v.$background-secondary;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
+  @include c.size(100%, 100%);
   z-index: v.$element-overlay;
+  background-color: v.$background-secondary;
+  justify-content: center;
+  text-align: center;
 
   & h3 {
     @extend %font-14-19-bold;

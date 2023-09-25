@@ -38,6 +38,7 @@ section {
   display: block;
 }
 
+/* Design choice */
 a,
 label,
 input,
@@ -45,6 +46,15 @@ button {
   cursor: default;
   -webkit-tap-highlight-color: transparent;
   border: none;
+}
+
+/* Design choice #2 */
+p,
+h1,
+h2,
+h3,
+output {
+  cursor: default;
 }
 
 /* Make images easier to work with */

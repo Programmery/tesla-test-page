@@ -4,9 +4,9 @@
 .base-input {
   @extend %flex-row-center;
   @include c.size(233px, 81px);
-  background-color: v.$background-secondary;
-  border: 1px solid v.$stroke-color-secondary;
   padding: 0 c.setSize(11px);
+  border: 1px solid v.$stroke-color-secondary;
+  background-color: v.$background-secondary;
 
   &._no-pad {
     padding: 0;
@@ -27,10 +27,10 @@
   }
 
   & input {
-    background: none;
-    border: none;
     pointer-events: none;
     max-width: c.setSize(100px);
+    background: none;
+    border: none;
 
     &:focus {
       outline: transparent;
@@ -38,11 +38,11 @@
   }
 
   & button {
-    @include c.size(40px, 40px);
     @extend %flex-row-center;
+    @include c.size(40px, 40px);
+    color: v.$accent-color;
     background: none;
     border: none;
-    color: v.$accent-color;
 
     &:not(:last-child) {
       border-bottom: 1px solid v.$stroke-color-secondary;
@@ -54,8 +54,8 @@
   }
 
   &__unit {
-    transform: translateY(5px);
     @extend %font-20-25-light;
+    transform: translateY(5px);
   }
 
   &__deg {

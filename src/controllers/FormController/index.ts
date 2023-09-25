@@ -35,6 +35,7 @@ export class FormController<T extends string> {
     }
 
     this.triggerOnChange();
+
     return formData;
   };
 

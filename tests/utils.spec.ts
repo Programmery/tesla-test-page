@@ -2,27 +2,16 @@
 import {chainPromiseExecution, clamp, wait} from '../src/utils/custom';
 
 describe('chainPromiseExecution() works as expected', () => {
-  const mockPromise = () =>
-    new Promise<number>(r => wait(1000).then(() => r(1)));
-  // eslint-disable-next-line prefer-promise-reject-errors
-  const mockReject = () =>
-    new Promise<number>((_, rej) => wait(1000).then(() => rej(2)));
+  const mockPromise = () => new Promise<number>(r => wait(1000).then(() => r(1)));
 
-  const promises = [
-    mockPromise,
-    mockReject,
-    () => Promise.reject(3),
-    () => Promise.resolve(4),
-  ];
+  const mockReject = () => new Promise<number>((_, rej) => wait(1000).then(() => rej(2)));
+
+  const promises = [mockPromise, mockReject, () => Promise.reject(3), () => Promise.resolve(4)];
 
   test('Order of execution, Rejects are ignored and logged with console.error', async () => {
-    const consoleErrorSpy = jest
-      .spyOn(global.console, 'error')
-      .mockImplementation();
+    const consoleErrorSpy = jest.spyOn(global.console, 'error').mockImplementation();
 
-    expect(await chainPromiseExecution(...promises)).toStrictEqual([
-      1, 2, 3, 4,
-    ]);
+    expect(await chainPromiseExecution(...promises)).toStrictEqual([1, 2, 3, 4]);
 
     expect(consoleErrorSpy.mock.calls.length).toBe(2);
     consoleErrorSpy.mockRestore();

@@ -3,10 +3,10 @@
 
 .footer {
   @extend %flex-row-center;
+  padding: c.setSize(50px);
   margin-top: 72px;
   background-color: v.$background-dark;
   color: v.$text-color-primary-contrast;
-  padding: c.setSize(50px);
 
   &__content {
     display: flex;
@@ -19,30 +19,29 @@
   &__group {
     @extend %font-14-24-regular;
     text-decoration: none;
-    margin-right: 95px;
-    margin-bottom: 48px;
+    margin-right: c.setSize(95px);
+    margin-bottom: c.setSize(48px);
     max-width: 350px;
 
     & h3 {
       @extend %font-10-12-bold;
       @include c.letterSpacing1;
-      text-transform: uppercase;
-      margin: 0 0 23px;
       font-family: v.$default-font-family;
-      cursor: default;
+      text-transform: uppercase;
+      margin: 0 0 c.setSize(23px);
     }
 
     & li a {
-      text-decoration: none;
-      color: v.$text-color-primary-contrast;
       font-family: v.$description-font-family;
+      color: v.$text-color-primary-contrast;
+      text-decoration: none;
     }
 
     & button {
       @extend %font-10-12-bold;
       background: v.$background-default;
       color: v.$call-to-action-color;
-      padding: 14px 29px 12px;
+      padding: c.setSize(14px) c.setSize(29px) c.setSize(12px);
       text-transform: uppercase;
       border-radius: 4px;
     }
@@ -53,7 +52,7 @@
     display: inline-block;
     text-decoration: none;
     color: v.$light-accent-color;
-    margin-bottom: 20px;
+    margin-bottom: c.setSize(20px);
   }
 
   &__hidden-label {
@@ -67,9 +66,9 @@
     background: v.$background-dark;
     color: v.$text-color-primary-contrast;
     width: 210px;
-    height: 40px;
+    height: c.setSize(40px);
     border-radius: 4px;
-    padding: 12px 20px;
-    margin: 0 17px 18px 0;
+    padding: c.setSize(12px) c.setSize(20px);
+    margin: 0 c.setSize(17px) c.setSize(18px) 0;
   }
 }
