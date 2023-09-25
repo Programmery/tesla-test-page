@@ -13,6 +13,9 @@ package-lock.json
 /build
 /static
 
+#build
+tsconfig.tsbuildinfo
+
 # misc
 .DS_Store
 .env.local
