@@ -33,10 +33,11 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1;
   background: v.$background-default;
-  min-height: 100vh;
   color: v.$text-color-primary;
+  min-height: 100vh;
 }
 
+/* Reset unneeded styles */
 body,
 h1,
 h2,
@@ -59,15 +60,7 @@ select {
   vertical-align: baseline;
 }
 
-a,
-button,
-input,
-label {
-  cursor: default;
-  -webkit-tap-highlight-color: transparent;
-  border: none;
-}
-
+/* Make semantic elements safe to use */
 article,
 aside,
 details,
@@ -82,6 +75,15 @@ img,
 picture,
 section {
   display: block;
+}
+
+a,
+button,
+input,
+label {
+  cursor: default;
+  -webkit-tap-highlight-color: transparent;
+  border: none;
 }
 
 /* Make images easier to work with */
