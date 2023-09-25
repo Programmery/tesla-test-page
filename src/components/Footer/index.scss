@@ -40,7 +40,9 @@
 
     & form {
       @extend %flex-row-center;
+      justify-content: flex-start;
       margin-bottom: c.setSize(18px);
+      flex-wrap: wrap;
     }
 
     & input {
@@ -49,13 +51,14 @@
       border: 1px solid v.$light-accent-color;
       background: v.$background-dark;
       color: v.$text-color-primary-contrast;
-      max-width: 210px;
+      max-width: 180px;
       flex-grow: 1;
       min-width: 150px;
       height: c.setSize(40px);
       border-radius: 4px;
       padding: c.setSize(12px) c.setSize(20px);
       margin-right: c.setSize(17px);
+      margin-top: c.setSize(20px);
 
       /* Removing autofill background-color */
       &:-webkit-autofill,
@@ -75,6 +78,7 @@
       padding: c.setSize(14px) c.setSize(29px) c.setSize(12px);
       text-transform: uppercase;
       border-radius: 4px;
+      margin-top: c.setSize(20px);
     }
   }
 
@@ -84,7 +88,6 @@
     display: inline-block;
     text-decoration: none;
     color: v.$light-accent-color;
-    margin-bottom: c.setSize(20px);
   }
 
   &__hidden-label {
