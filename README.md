@@ -65,7 +65,8 @@ To see the script that I made for data denormalization, [click here.](https://gi
 7. Scripts are loaded with `defer` attribute.
 8. Styles are bundled seperatly, but webpack is configured in a way, that inline style injection at buildtime is also possible (activate `html-inline-css-webpack-plugin`)
 9. Similar svgs (for example up and down arrow icons) are reused through `transforms` and by defining svg symbols in the html.
-10. And more?
+10. Images that are not visible to the user are preloaded in the background.
+11. And more?
    
 ### Components
 Since it is essentially a JS,HTML,CSS project, components are just folders with appropriate styles. 
