@@ -30,6 +30,7 @@
     background: none;
     border: none;
     pointer-events: none;
+    max-width: c.setSize(100px);
 
     &:focus {
       outline: transparent;

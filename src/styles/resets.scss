@@ -1,42 +1,3 @@
-@use '../styles/common' as c;
-@use '../styles/variables' as v;
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  outline-color: v.$accent-color !important;
-}
-
-html {
-  font-family: v.$default-font-family;
-  font-size: v.$default-font-size + px;
-  text-size-adjust: none;
-
-  &:focus-within {
-    scroll-behavior: smooth;
-  }
-}
-
-@media screen and (max-width: v.$media-bp-mobile) {
-  html {
-    font-size: v.$mobile-font-size + px;
-  }
-}
-@media screen and (max-width: v.$media-bp-xs) {
-  html {
-    font-size: v.$xs-font-size + px;
-  }
-}
-
-body {
-  text-rendering: optimizeSpeed;
-  line-height: 1;
-  background: v.$background-default;
-  color: v.$text-color-primary;
-  min-height: 100vh;
-}
-
 /* Reset unneeded styles */
 body,
 h1,
@@ -44,13 +5,13 @@ h2,
 h3,
 h4,
 p,
-figure,
 ul,
-fieldset,
-legend,
-blockquote,
 input,
 button,
+legend,
+figure,
+fieldset,
+blockquote,
 select {
   margin: 0;
   padding: 0;
@@ -61,14 +22,14 @@ select {
 }
 
 /* Make semantic elements safe to use */
-article,
-aside,
-details,
 figcaption,
+details,
+article,
 figure,
 footer,
 header,
 hgroup,
+aside,
 menu,
 nav,
 img,
@@ -78,9 +39,9 @@ section {
 }
 
 a,
-button,
+label,
 input,
-label {
+button {
   cursor: default;
   -webkit-tap-highlight-color: transparent;
   border: none;

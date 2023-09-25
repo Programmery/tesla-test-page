@@ -1,6 +1,6 @@
+import './styles/resets.scss';
 import './styles/animation/animation-setup.scss';
 import './styles/layout.scss';
-import './styles/presets.scss';
 
 import './components/Header';
 import './components/Calculator';
