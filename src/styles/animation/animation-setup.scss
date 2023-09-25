@@ -58,7 +58,7 @@ $fade-in-initial-transform: translateY(50px);
     transform-origin: center;
   }
 
-  &:active:not(:disabled) &-content {
+  &:active:not(:disabled) &__content {
     transform: scale(0.7);
   }
 }
