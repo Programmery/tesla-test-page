@@ -1,4 +1,4 @@
-# Tesla Interactive Tesla page
+# Interactive Tesla page
 
 **DEMO**: 🚀 [Deployed with Netlify](https://melodic-fudge-882fb9.netlify.app/)
 
