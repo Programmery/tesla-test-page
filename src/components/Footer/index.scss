@@ -6,7 +6,7 @@
   margin-top: 72px;
   background-color: v.$background-dark;
   color: v.$text-color-primary-contrast;
-  padding: 50px;
+  padding: c.setSize(50px);
 
   &__content {
     display: flex;
@@ -29,6 +29,7 @@
       text-transform: uppercase;
       margin: 0 0 23px;
       font-family: v.$default-font-family;
+      cursor: default;
     }
 
     & li a {

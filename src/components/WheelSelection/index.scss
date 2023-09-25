@@ -6,6 +6,7 @@
   @include c.size(100%, 100%);
   @extend %flex-row-center;
   @extend %font-20-regular;
+  padding: c.setSize(3px);
 
   & img {
     margin-right: 2.5rem;

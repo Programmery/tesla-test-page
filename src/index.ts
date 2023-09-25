@@ -22,8 +22,6 @@ import {preloadImages} from './init-scripts/preload-images';
 import {activateResultsUIUpdates} from './init-scripts/activate-results-ui-updates';
 import {activateJsSmoothScrolling} from './init-scripts/activate-js-smooth-scrolling';
 
-// import calculatorResultMap from './data/denormalised-data-map.json';
-
 const init = () => {
   initAnimations();
   preloadImages();
@@ -54,9 +52,6 @@ const init = () => {
    * Update two UI elements when Form onChange triggers
    */
   activateResultsUIUpdates(formController);
-  /**
-   * Activate JS Smooth Scrolling
-   */
 };
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -1,19 +1,10 @@
-import type {
-  ValidationMap,
-  FormDataMap,
-  UpdateCallback,
-  InitParams,
-} from './types';
+import type {FormDataMap, UpdateCallback, InitParams} from './types';
 
 export class FormController<T extends string> {
   private formEl: InitParams<T>['formEl'];
-
-  private validationMap?: InitParams<T>['validationMap'];
-
-  private fieldNames: InitParams<T>['fieldNames'];
-
   private formData: FormDataMap<T>;
-
+  private fieldNames: InitParams<T>['fieldNames'];
+  private validationMap?: InitParams<T>['validationMap'];
   private subscribers: UpdateCallback<T>[] = [];
 
   constructor({formEl, fieldNames, validationMap}: InitParams<T>) {

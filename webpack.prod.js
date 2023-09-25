@@ -1,4 +1,3 @@
-/* eslint-disable */
 const webpack = require('webpack');
 const dotenv = require('dotenv');
 const path = require('path');
@@ -11,12 +10,6 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-
-/**
- * Inject inline css in a style tag at build time
- */
-// const HTMLInlineCSSWebpackPlugin =
-//   require('html-inline-css-webpack-plugin').default;
 
 module.exports = merge(common, {
   mode: 'production',
@@ -53,12 +46,7 @@ module.exports = merge(common, {
       {
         test: /\.s?css$/,
         exclude: /node-modules/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader',
-          'sass-loader',
-        ],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
       },
       {
         test: /\.(jpe?g|png|svg)$/i,
@@ -69,11 +57,7 @@ module.exports = merge(common, {
               minimizer: {
                 implementation: ImageMinimizerPlugin.imageminMinify,
                 options: {
-                  plugins: [
-                    ['jpegtran', {progressive: true}],
-                    ['optipng', {optimizationLevel: 5}],
-                    'imagemin-svgo',
-                  ],
+                  plugins: [['jpegtran', {progressive: true}], ['optipng', {optimizationLevel: 5}], 'imagemin-svgo'],
                 },
               },
             },
@@ -91,9 +75,7 @@ module.exports = merge(common, {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env': JSON.stringify(
-        dotenv.config({path: path.resolve(process.cwd(), '.env.prod')}).parsed,
-      ),
+      'process.env': JSON.stringify(dotenv.config({path: path.resolve(process.cwd(), '.env.prod')}).parsed),
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
@@ -101,7 +83,6 @@ module.exports = merge(common, {
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      // inlineSource: '.css$',
       filename: './index.html',
       minify: {
         removeAttributeQuotes: true,
@@ -110,8 +91,6 @@ module.exports = merge(common, {
       },
       inject: 'body',
     }),
-    // Uncomment to inline css
-    // new HTMLInlineCSSWebpackPlugin(),
     new CleanWebpackPlugin(),
   ],
   optimization: {

@@ -1,24 +1,6 @@
 @use '../styles/common' as c;
 @use '../styles/variables' as v;
 
-$fade-in-initial-transform: translateY(50px);
-
-/**
- * Remove arrows from number inputs
- * Chrome, Safari, Edge, Opera
- */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type='number'] {
-  -moz-appearance: textfield;
-  appearance: textfield;
-}
-
 *,
 *::before,
 *::after {
@@ -28,11 +10,22 @@ input[type='number'] {
 
 html {
   font-family: v.$default-font-family;
-  // do not change font on IPhone orientation change
+  font-size: v.$default-font-size + px;
   text-size-adjust: none;
 
   &:focus-within {
     scroll-behavior: smooth;
+  }
+}
+
+@media screen and (max-width: v.$media-bp-mobile) {
+  html {
+    font-size: v.$mobile-font-size + px;
+  }
+}
+@media screen and (max-width: v.$media-bp-xs) {
+  html {
+    font-size: v.$xs-font-size + px;
   }
 }
 
@@ -100,4 +93,20 @@ picture {
 ol,
 ul {
   list-style: none;
+}
+
+/**
+ * Remove arrows from number inputs
+ * Chrome, Safari, Edge, Opera
+ */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
 }

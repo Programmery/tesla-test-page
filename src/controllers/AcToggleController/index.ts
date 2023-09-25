@@ -5,7 +5,6 @@ import {InitData} from './types';
 
 export class AcToggleController {
   acToggleElement: InitData['acToggleElement'];
-
   warmTemp = 20;
 
   constructor({acToggleElement, initialFormData}: InitData) {
@@ -38,7 +37,7 @@ export class AcToggleController {
    * We could also use a button,
    * but checkbox is better for accessibility here.
    */
-  preventFocusOnMouseClick() {
+  private preventFocusOnMouseClick() {
     const checkbox =
       document.querySelector<HTMLInputElement>('.ac-toggle input');
 

@@ -40,6 +40,7 @@
         "no-shadow": "off",
         "@typescript-eslint/explicit-module-boundary-types": "off",
         "import/prefer-default-export": "off",
+        "lines-between-class-members": "off",
         "consistent-return": "warn",
         "no-multi-spaces": "error",
         "@typescript-eslint/ban-types": "error",

@@ -2,8 +2,8 @@
 @use '../../styles/variables' as v;
 
 .scroll-button {
-  margin-top: 59px;
-  margin-bottom: 59px;
+  margin-top: c.setSize(59px);
+  margin-bottom: c.setSize(59px);
   background: transparent;
   border: none;
 

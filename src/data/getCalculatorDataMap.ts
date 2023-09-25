@@ -43,8 +43,8 @@ const writeDataToFile = (data: CalculatorResultMap) => {
     'utf8',
     err => {
       if (err) {
-        console.log('Error while writing the file');
-        return console.log(err);
+        console.error('Error while writing the file');
+        return console.error(err);
       }
 
       return console.log('JSON file has been saved.');

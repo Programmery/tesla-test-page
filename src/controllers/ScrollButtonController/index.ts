@@ -3,13 +3,12 @@ import {clamp} from '../../utils/custom';
 import {InitParams} from './types';
 
 export class ScrollButtonController {
-  private button: InitParams['button'];
-
-  private animationDuration = 300;
-
-  // design choice
+  /**
+   * Design choice
+   */
   private extraSpace = 45;
-
+  private button: InitParams['button'];
+  private animationDuration = 200;
   private destinationElement: InitParams['destinationElement'];
 
   constructor({button, destinationElement}: InitParams) {
@@ -43,7 +42,6 @@ export class ScrollButtonController {
       const progress = clamp(timeFraction, 0, 1);
 
       window.scrollTo(0, startY + diffY * progress);
-      console.log(startY + diffY * progress);
 
       if (progress < 1) {
         requestAnimationFrame(animateLoop);

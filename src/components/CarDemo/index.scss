@@ -12,7 +12,7 @@
     max-width: 100%;
   }
 
-  /* Hide the figcaption visually, but keep it accessible to screen readers */
+  
   &__caption {
     @include c.size(1px, 1px);
     @extend %a11y-friendly-hide;

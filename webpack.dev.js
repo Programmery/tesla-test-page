@@ -1,4 +1,3 @@
-/* eslint-disable */
 const path = require('path');
 const webpack = require('webpack');
 const dotenv = require('dotenv');
@@ -21,8 +20,6 @@ module.exports = merge(common, {
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].bundle.js',
-    // publicPath: path.resolve(__dirname, './dist'),
-    // chunkFilename: '[name].bundle.js',
   },
   module: {
     rules: [
@@ -55,9 +52,7 @@ module.exports = merge(common, {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env': JSON.stringify(
-        dotenv.config({path: path.resolve(process.cwd(), '.env.dev')}).parsed,
-      ),
+      'process.env': JSON.stringify(dotenv.config({path: path.resolve(process.cwd(), '.env.dev')}).parsed),
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html',

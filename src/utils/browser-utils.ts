@@ -18,16 +18,10 @@ if (typeof window !== 'undefined') {
 
 const isMatchMediaSupported = typeof matchMedia === 'function';
 
-const hasReducedMotion =
-  isMatchMediaSupported &&
-  window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+const hasReducedMotion = isMatchMediaSupported && window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
 
-const isMouseDevice =
-  isMatchMediaSupported && matchMedia('(pointer:fine)').matches;
+const isMouseDevice = isMatchMediaSupported && matchMedia('(pointer:fine)').matches;
 
-/**
- * Early caching of Images
- */
 const preloadImage = (src: string): Promise<void> =>
   new Promise((res, rej) => {
     const image = new Image();
@@ -37,22 +31,8 @@ const preloadImage = (src: string): Promise<void> =>
     image.src = src;
   });
 
-const getScrollPositionY = () =>
-  document.documentElement.scrollTop ||
-  document.body.scrollTop ||
-  window.pageYOffset ||
-  0;
+const getScrollPositionY = () => document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset || 0;
 
-/**
- * Прекращает нативную обработку события
- */
 const preventDefault = (e?: Event) => e?.cancelable && e.preventDefault();
 
-export {
-  isMouseDevice,
-  isPassiveSupported,
-  hasReducedMotion,
-  preloadImage,
-  preventDefault,
-  getScrollPositionY,
-};
+export {isMouseDevice, isPassiveSupported, hasReducedMotion, preloadImage, preventDefault, getScrollPositionY};

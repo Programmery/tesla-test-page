@@ -54,8 +54,7 @@
       background-position-y: 66%;
       background-repeat: no-repeat;
       background-size: 29%;
-      height: 100%;
-      width: 100%;
+      @include c.size(100%, 100%);
     }
 
     &._heat::before {

@@ -8,15 +8,16 @@
 
   &__title {
     @extend %font-38-regular;
-    margin: 8px;
+    @extend %flex-row-center;
+    margin: c.setSize(8px);
     text-align: center;
-    padding: 0.274em;
+    min-height: c.setSize(30px);
   }
 
   &__disclaimer {
     @extend %font-16-22-regular;
     font-family: v.$description-font-family;
-    margin-top: 48px;
-    padding: 0 24px;
+    margin-top: c.setSize(48px);
+    padding: 0 c.setSize(24px);
   }
 }

@@ -19,7 +19,6 @@ $fade-in-initial-transform: translateY(50px);
   }
 }
 
-// animation
 .overlay {
   @include c.stretchFixed;
   z-index: v.$page-overlay-z-index;
@@ -131,11 +130,3 @@ $fade-in-initial-transform: translateY(50px);
     transform: translateY(0);
   }
 }
-
-
-
-// :export {
-//     textColor: $textColor;
-//     primaryColor: $primaryColor;
-//     secondaryColor: $secondaryColor;
-// }

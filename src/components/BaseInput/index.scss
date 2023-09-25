@@ -6,7 +6,7 @@
   @include c.size(233px, 81px);
   background-color: v.$background-secondary;
   border: 1px solid v.$stroke-color-secondary;
-  padding: 0 11px;
+  padding: 0 c.setSize(11px);
 
   &._no-pad {
     padding: 0;
@@ -59,7 +59,7 @@
 
   &__deg {
     display: block;
-    width: 20px;
+    width: setSize(20px);
     text-align: left;
   }
 }

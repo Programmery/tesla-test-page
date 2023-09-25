@@ -20,9 +20,7 @@ const passiveIfSupported = isPassiveSupported ? {passive: true} : undefined;
 
 export class AnimationsController {
   parallaxMultiplier = 0.2;
-
   parallaxElement: InitParams['parallaxElement'];
-
   cursorElement: InitParams['cursorElement'];
 
   constructor({parallaxElement, cursorElement}: InitParams) {
@@ -73,14 +71,17 @@ export class AnimationsController {
     );
 
     for (const element of observedElements) {
-      // remove classes for browsers that do not support IntersectionObserver
+      /**
+       * These classes are for browsers without IntersectionObserver support
+       */
       element.classList.remove(FADE_IN_CLASS);
       element.classList.remove(ANIMATION_DELAY_50MS);
       element.classList.remove(ANIMATION_DELAY_1S);
-      // start observing
 
       setTimeout(() => {
-        // do not animate if page had initial scroll
+        /**
+         * Do not animate if page had initial scroll (design choice)
+         */
         if (getScrollPositionY() > 100) {
           element.classList.remove(OBSERVED_FADE_IN);
           return;

@@ -1,20 +1,12 @@
-import {KeyToResultMap} from '../../data/types';
 import {FormDataMap} from '../FormController/types';
 import {InitParams} from './types';
 
 export class ResultsController<T extends FormDataMap<string>> {
   keyToResultMap: InitParams<T>['keyToResultMap'];
-
   element: InitParams<T>['elementToUpdate'];
-
   getMapKey: InitParams<T>['getMapKey'];
 
-  constructor({
-    keyToResultMap,
-    getMapKey,
-    initialFormData,
-    elementToUpdate,
-  }: InitParams<T>) {
+  constructor({keyToResultMap, getMapKey, initialFormData, elementToUpdate}: InitParams<T>) {
     this.keyToResultMap = keyToResultMap;
     this.element = elementToUpdate;
     this.getMapKey = getMapKey;

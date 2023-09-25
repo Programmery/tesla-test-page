@@ -1,4 +1,6 @@
 /* Media breakpoints */
+$media-bp-xs: 424px;
+$media-bp-mobile: 481px;
 $media-bp-tablets: 768px;
 $media-bp-desktop-s: 1024px;
 $max-content-width: 1400px;
@@ -12,15 +14,20 @@ $element-overlay: 50;
 $default-font-family: 'Montserrat', sans-serif;
 $description-font-family: 'Arial', sans-serif;
 
+/* Default Font Size */
+$default-font-size: 16;
+$mobile-font-size: 14;
+$xs-font-size: 12;
+
 /* Colors */
-$background-default: white;
+$background-default: #ffffff;
 $background-branding: #121212;
 $background-secondary: #f0f2f7;
-$background-dark: black;
+$background-dark: #000000;
 $background-red: #cc0000;
 
 $text-color-primary: #040c36;
-$text-color-primary-contrast: white;
+$text-color-primary-contrast: #ffff;
 $text-color-secondary: #707070;
 
 $stroke-color-primary: #040c36;
