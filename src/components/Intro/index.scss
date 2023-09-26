@@ -9,6 +9,7 @@
   &__title {
     @extend %font-64-64-light;
     max-width: 810px;
+    padding: 0 16px;
   }
 
   &__subtitle {
