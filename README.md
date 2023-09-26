@@ -31,6 +31,11 @@ Elements that function like checkboxes or radio buttons actually ARE checkboxes 
 Some fun animations too (more on that in the Animations section), but if you prefer less motion, animations are disabled.
 Page can be opened on any device and look good - design is fully responsive.
 
+
+And before you ask: YES, it even fully supports IE11!
+
+![ie-test](./docs/IE11-test.gif)
+
 ## Animations 💥
 ```diff
 + yes animations

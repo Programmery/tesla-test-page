@@ -1,6 +1,8 @@
 @use '../../styles/common' as c;
 @use '../../styles/variables' as v;
 
+$button-size-ratio: 0.35;
+
 .wheel-selection {
   @include c.size(100%, 100%);
   @extend %flex-row-center;
@@ -10,6 +12,31 @@
 
   & img {
     margin-right: 2.5rem;
+  }
+
+  &__size-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(80%, -50%);
+  }
+
+  &::before {
+    content: '';
+    @include c.stretchAbsolute;
+    @include c.size(100%, 100%);
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+    background-position-x: 30%;
+    background-image: url('icons/wheel.svg');
+  }
+
+  &._s::before {
+    background-size: $button-size-ratio * 70%;
+  }
+
+  &._m::before {
+    background-size: $button-size-ratio * 80%;
   }
 
   & input {
