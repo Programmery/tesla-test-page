@@ -21,6 +21,8 @@ To test the project run:
 npm run test
 ```
 It has some unit tests and also checks the validity of HTML, presence of all the important content.
+Test coverage can be increased, if needed.
+
 
 ## It is fast, accessible and SEO-friendly
 Made according to SEO and a11y standards.
