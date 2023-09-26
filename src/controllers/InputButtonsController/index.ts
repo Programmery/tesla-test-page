@@ -1,6 +1,6 @@
-import {UpdateDisabledStateParams, DirectionToButtonMap} from './types';
 import {clamp} from '../../utils/custom';
 import {toArray, isFinite} from '../../utils/polifills';
+import {UpdateDisabledStateParams, DirectionToButtonMap} from './types';
 
 export class InputButtonsController {
   inputs: HTMLInputElement[];

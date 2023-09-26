@@ -47,6 +47,24 @@ $top-bar-height: 4.68vw;
     }
   }
 
+  &__logo {
+    @extend %top-bar-size;
+    display: block;
+    position: relative;
+    width: 100px;
+    height: 10px;
+
+    &::before {
+      content: '';
+      @include c.stretchAbsolute;
+      @include c.size(100%, 100%);
+      background-position-y: 50%;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-image: url('icons/tesla-logo.svg');
+    }
+  }
+
   &__menu {
     @extend %flex-column;
     @include c.size(100%, 100vh);

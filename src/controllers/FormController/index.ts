@@ -20,7 +20,6 @@ export class FormController<T extends string> {
 
   private subscribeToAllChanges() {
     this.fieldNames.forEach(name => {
-      /* querySelectorAll not querySelector because of radio buttons */
       const elements = toArray(this.formEl.querySelectorAll(`[name="${name}"]`));
       elements.forEach(el => el.addEventListener('change', this.updateFormData));
     });
