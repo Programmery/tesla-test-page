@@ -1,11 +1,9 @@
 import type {FormController} from '../controllers/FormController';
 import {ResultsController} from '../controllers/ResultsController';
 import {fakeApiCall} from '../data/utils/fake-api-call';
-import {getMapKey} from '../data/utils/getMapKey';
+import {getMapKey} from '../data/utils/get-map-key';
 
-export const activateResultsUIUpdates = async (
-  formController: FormController<'ac' | 'kmh' | 'temp' | 'wheelsize'>,
-) => {
+export const activateResultsUIUpdates = async (formController: FormController<'ac' | 'kmh' | 'temp' | 'wheelsize'>) => {
   /**
    * Pretend we are getting data from API
    */
@@ -30,8 +28,5 @@ export const activateResultsUIUpdates = async (
     getMapKey,
   });
 
-  formController.onChange(
-    model100DController.updateResultsUI,
-    modelP100DController.updateResultsUI,
-  );
+  formController.onChange(model100DController.updateResultsUI, modelP100DController.updateResultsUI);
 };

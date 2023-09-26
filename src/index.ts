@@ -14,18 +14,18 @@ import './components/Intro';
 import './components/Calculation';
 import './components/ScrollButton';
 
-import {initAnimations} from './init-scripts/init-animations-controller';
+import {initAnimationsController} from './init-scripts/init-animations-controller';
 import {initFormController} from './init-scripts/init-form-controller';
 import {initButtonInputsController} from './init-scripts/init-button-inputs-controller';
 import {initAcToggleController} from './init-scripts/init-ac-toggle-controller';
 import {preloadImages} from './init-scripts/preload-images';
 import {activateResultsUIUpdates} from './init-scripts/activate-results-ui-updates';
 import {activateJsSmoothScrolling} from './init-scripts/activate-js-smooth-scrolling';
-import {initPollyfills} from './init-scripts/init-pollyfills';
+import {initPolyfills} from './init-scripts/init-polyfills';
 
 const init = () => {
-  initPollyfills();
-  initAnimations();
+  initPolyfills();
+  initAnimationsController();
   preloadImages();
   activateJsSmoothScrolling({
     button: document.getElementById('scroll-button'),

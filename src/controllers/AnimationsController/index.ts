@@ -81,8 +81,8 @@ export class AnimationsController {
     }
 
     window.addEventListener('scroll', () => cursorEl.classList.remove(VISIBLE_CLASS), passiveIfSupported);
-    document?.addEventListener('mouseenter', () => cursorEl.classList.add(VISIBLE_CLASS), passiveIfSupported);
-    document?.addEventListener('mouseleave', () => cursorEl.classList.remove(VISIBLE_CLASS), passiveIfSupported);
+    document.addEventListener('mouseenter', () => cursorEl.classList.add(VISIBLE_CLASS), passiveIfSupported);
+    document.addEventListener('mouseleave', () => cursorEl.classList.remove(VISIBLE_CLASS), passiveIfSupported);
 
     const mouseMoveHandler = (e: MouseEvent) => {
       requestAnimationFrame(() => {
@@ -95,7 +95,7 @@ export class AnimationsController {
       });
     };
 
-    document?.addEventListener('mousemove', mouseMoveHandler, passiveIfSupported);
+    document.addEventListener('mousemove', mouseMoveHandler, passiveIfSupported);
 
     const clickableElements = document.getElementsByClassName(CLICKABLE_CLASS);
 

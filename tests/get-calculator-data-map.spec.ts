@@ -1,4 +1,4 @@
-import {getCalculatorDataMap} from './getCalculatorDataMap';
+import {getCalculatorDataMap} from '../src/data/get-calculator-data-map';
 
 describe('Should correctly convert array data to lookup map', () => {
   test('Generates expected map from example data', () => {

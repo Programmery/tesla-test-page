@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-restricted-properties */
 import {PromiseFunction} from './types';
 
@@ -15,7 +16,7 @@ export const wait = async (ms = 1000): Promise<void> => new Promise(r => setTime
  * NOTE: Execution continues even in case of Promise rejection.
  * Error is included in resulting array and execution chain goes on.
  */
-export const chainPromiseExecution = async (...funcs: PromiseFunction[]) => {
+export const chainPromiseExecution = async <T extends PromiseFunction<any>>(...funcs: T[]) => {
   const results = [];
   for (const func of funcs) {
     // eslint-disable-next-line no-await-in-loop

@@ -2,7 +2,7 @@ import {writeFile} from 'fs';
 import exampleData100D from './metric-100D.json';
 import exampleDataP100D from './metric-P100D.json';
 import {DataItem, KeyToResultMap, CalculatorResultMap} from './types';
-import {getMapKey} from './utils/getMapKey';
+import {getMapKey} from './utils/get-map-key';
 
 /**
  * Since the task did not specify, how should I work with data,

@@ -1,13 +1,11 @@
 /* eslint-disable prefer-promise-reject-errors */
 import {chainPromiseExecution, clamp, wait} from '../src/utils/custom';
 
+const mockPromise = () => new Promise<number>(r => wait(1000).then(() => r(1)));
+const mockReject = () => new Promise<number>((_, rej) => wait(1000).then(() => rej(2)));
+const promises = [mockPromise, mockReject, () => Promise.reject(3), () => Promise.resolve(4)];
+
 describe('chainPromiseExecution() works as expected', () => {
-  const mockPromise = () => new Promise<number>(r => wait(1000).then(() => r(1)));
-
-  const mockReject = () => new Promise<number>((_, rej) => wait(1000).then(() => rej(2)));
-
-  const promises = [mockPromise, mockReject, () => Promise.reject(3), () => Promise.resolve(4)];
-
   test('Order of execution, Rejects are ignored and logged with console.error', async () => {
     const consoleErrorSpy = jest.spyOn(global.console, 'error').mockImplementation();
 
