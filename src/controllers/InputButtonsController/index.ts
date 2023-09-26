@@ -1,5 +1,6 @@
 import {UpdateDisabledStateParams, DirectionToButtonMap} from './types';
 import {clamp} from '../../utils/custom';
+import {toArray, isFinite} from '../../utils/polifills';
 
 export class InputButtonsController {
   inputs: HTMLInputElement[];
@@ -51,7 +52,7 @@ export class InputButtonsController {
 
       const newValue = clamp(value + step * multiplier, +min, +max);
 
-      input.value = Number.isFinite(newValue) ? `${newValue}` : input.value;
+      input.value = isFinite(newValue) ? `${newValue}` : input.value;
 
       this.updateButtonDisabledStates({
         newValue,
@@ -66,11 +67,11 @@ export class InputButtonsController {
 
   private activateInputButtons() {
     for (const input of this.inputs) {
-      const buttonList = document.querySelectorAll<HTMLButtonElement>(`[data-name="${input.name}"]`);
+      const buttons = toArray(document.querySelectorAll<HTMLButtonElement>(`[data-name="${input.name}"]`));
 
-      const directionToButtonMap = this.generateDirectionToButtonMap([...buttonList]);
+      const directionToButtonMap = this.generateDirectionToButtonMap(buttons);
 
-      buttonList.forEach(button =>
+      buttons.forEach(button =>
         button.addEventListener('click', this.generateButtonClickHandler(input, button, directionToButtonMap)),
       );
     }

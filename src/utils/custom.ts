@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-properties */
 import {PromiseFunction} from './types';
 
 export const clamp = (value: number, min: number, max: number) => {
@@ -6,8 +7,7 @@ export const clamp = (value: number, min: number, max: number) => {
   return value;
 };
 
-export const wait = async (ms = 1000): Promise<void> =>
-  new Promise(r => setTimeout(() => r(), ms));
+export const wait = async (ms = 1000): Promise<void> => new Promise(r => setTimeout(() => r(), ms));
 
 /**
  * Executes promises one by one in a chain.

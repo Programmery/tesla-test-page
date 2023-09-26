@@ -21,8 +21,10 @@ import {initAcToggleController} from './init-scripts/init-ac-toggle-controller';
 import {preloadImages} from './init-scripts/preload-images';
 import {activateResultsUIUpdates} from './init-scripts/activate-results-ui-updates';
 import {activateJsSmoothScrolling} from './init-scripts/activate-js-smooth-scrolling';
+import {initPollyfills} from './init-scripts/init-pollyfills';
 
 const init = () => {
+  initPollyfills();
   initAnimations();
   preloadImages();
   activateJsSmoothScrolling({

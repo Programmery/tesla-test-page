@@ -1,3 +1,4 @@
+import {toArray} from '../../utils/polifills';
 import type {FormDataMap, UpdateCallback, InitParams} from './types';
 
 export class FormController<T extends string> {
@@ -12,9 +13,17 @@ export class FormController<T extends string> {
     this.fieldNames = fieldNames;
     this.validationMap = validationMap;
 
-    formEl.addEventListener('input', this.updateFormData);
+    this.subscribeToAllChanges();
     const formData = this.updateFormData();
     this.formData = formData;
+  }
+
+  private subscribeToAllChanges() {
+    this.fieldNames.forEach(name => {
+      /* querySelectorAll not querySelector because of radio buttons */
+      const elements = toArray(this.formEl.querySelectorAll(`[name="${name}"]`));
+      elements.forEach(el => el.addEventListener('change', this.updateFormData));
+    });
   }
 
   private triggerOnChange() {

@@ -36,11 +36,9 @@
     }
   }
 
-  @media (prefers-reduced-motion: no-preference) {
-    &__wheel {
-      transform-origin: center;
-      animation: spin 0.3s linear infinite;
-    }
+  &__wheel {
+    transform-origin: center;
+    animation: spin 0.3s linear infinite;
   }
 
   @media screen and (min-width: v.$max-content-width) {

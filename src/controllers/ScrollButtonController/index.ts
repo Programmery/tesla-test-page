@@ -8,7 +8,7 @@ export class ScrollButtonController {
    */
   private extraSpace = 45;
   private button: InitParams['button'];
-  private animationDuration = 200;
+  private animationDuration = 300;
   private destinationElement: InitParams['destinationElement'];
 
   constructor({button, destinationElement}: InitParams) {
