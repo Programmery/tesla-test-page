@@ -1,6 +1,6 @@
 # Interactive Tesla page
 
-**DEMO**: 🚀 [Deployed with Netlify](https://melodic-fudge-882fb9.netlify.app/)
+**DEMO**: 🚀 [Deployed with Netlify](https://gregarious-rugelach-ddbca1.netlify.app/)
 
 
 ## Building the project
