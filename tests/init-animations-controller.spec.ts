@@ -16,7 +16,7 @@ beforeEach(() => {
 });
 afterEach(jest.resetModules);
 
-/* Mocking variables that AnimationController imports and uses  */
+/* Mocking module import for variables that AnimationController uses  */
 jest.mock('../src/utils/browser-utils', () => {
   const originalModule = jest.requireActual('../src/utils/browser-utils');
 
@@ -36,6 +36,7 @@ jest.mock('../src/utils/browser-utils', () => {
 jest.spyOn(global, 'addEventListener');
 jest.spyOn(document, 'addEventListener');
 jest.spyOn(global, 'setTimeout');
+
 /* For setTimeout that is used internally by AnimationsController */
 jest.useFakeTimers();
 
