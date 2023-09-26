@@ -29,7 +29,7 @@ Made according to SEO and a11y standards.
 
 <img width="497" alt="Screenshot 2023-09-25 at 18 15 06" src="https://github.com/Programmery/tesla-test-page/assets/46135520/ed75548f-7b66-4151-b34a-1e63086da804">
 
-Elements that function like checkboxes or radio buttons actually ARE checkboxes and radio buttons, just more stylish.
+Elements that function like checkboxes or radio buttons actually ARE checkboxes and radio buttons ([with arrow-up-down navigation](https://www.w3.org/wiki/RadioButton)), just more stylish.
 Some fun animations too (more on that in the Animations section), but if you prefer less motion, animations are disabled.
 Page can be opened on any device and look good - design is fully responsive.
 
